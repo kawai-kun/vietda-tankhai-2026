@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giải Việt Dã Phường Tân Khai Năm 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&family=JetBrains+Mono:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy-dark: #090e1a;
+      --navy: #0f172a;
+      --sport-orange: #ff5500;
+      --sport-red: #e11d48;
+      --sport-blue: #0284c7;
+      --gold: #f59e0b;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-display {
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    .font-mono-num {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Ẩn 100% thanh tiêu đề đen & Avatar Google trên Google My Maps Iframe */
+    .map-viewport {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .map-viewport iframe {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 60px);
+      border: 0;
+      display: block;
+    }
+    .map-modal-body {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+    .map-modal-body iframe {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 60px);
+      border: 0;
+    }
+
+    /* Hiệu ứng ảnh nền giải chạy tại Việt Nam */
+    @keyframes heroSlowZoom {
+      0%, 100% { transform: scale(1.02); }
+      50% { transform: scale(1.08); }
+    }
+    .hero-bg-animate {
+      animation: heroSlowZoom 22s ease-in-out infinite;
+    }
+
+    /* Hiệu ứng chữ chạy từ Phải sang Trái (Marquee Right-to-Left) thuận mắt */
+    @keyframes marqueeRightToLeft {
+      0% { transform: translate3d(0%, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    @keyframes finisherPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 14px rgba(245, 158, 11, 0.55), 0 0 28px rgba(234, 88, 12, 0.35);
+      }
+      50% {
+        box-shadow: 0 0 24px rgba(251, 191, 36, 0.9), 0 0 42px rgba(245, 158, 11, 0.6);
+      }
+    }
+    .finisher-banner {
+      background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+      animation: finisherPulseGlow 2.4s ease-in-out infinite;
+    }
+    .finisher-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeRightToLeft 15s linear infinite;
+    }
+    .finisher-banner:hover .finisher-marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Hiệu ứng chuyển Tab mượt mà */
+    @keyframes tabSlideFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tab-section {
+      display: none;
+    }
+    .tab-section.active {
+      display: block;
+      animation: tabSlideFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-[#f1f5f9] text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- 1. TOPBAR NỔI BẬT VỚI DẤU CHẤM ĐỎ NHẤP NHÁY TRỰC TUYẾN -->
+  <header class="sticky top-0 z-40 bg-[#0b1324]/95 backdrop-blur-md border-b border-slate-800 text-white shadow-md">
+    <div class="max-w-[1680px] mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="relative flex h-3.5 w-3.5 shrink-0" title="Cổng đăng ký đang trực tuyến">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-80"></span>
+          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-rose-600 border border-rose-300 shadow-[0_0_10px_#f43f5e]"></span>
+        </span>
+        <span class="font-bold tracking-wide uppercase text-xs sm:text-sm text-white">
+          CỔNG ĐĂNG KÝ TRỰC TUYẾN & CẤP SỐ BIB TỰ ĐỘNG – PHƯỜNG TÂN KHAI
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/50 text-amber-100 font-semibold">
+          <span>👥 Tổng VĐV đã đăng ký:</span>
+          <strong id="statTotal" class="text-white font-mono-num font-extrabold text-sm">0</strong>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-500/50 text-sky-100 font-semibold">
+          <span>🏃 Cự ly 3km:</span>
+          <strong id="stat3km" class="text-white font-mono-num font-extrabold text-sm">0</strong>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-950/80 border border-orange-500/50 text-orange-100 font-semibold">
+          <span>🔥 Cự ly 5km:</span>
+          <strong id="stat5km" class="text-white font-mono-num font-extrabold text-sm">0</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. BỐ CỤC 3 CỘT: [SƠ ĐỒ 3KM BÊN TRÁI] - [TRUNG TÂM ĐĂNG KÝ] - [SƠ ĐỒ 5KM BÊN PHẢI] -->
+  <main class="flex-1 max-w-[1680px] w-full mx-auto px-3 sm:px-5 py-5">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+      <!-- CỘT TRÁI (3/12): LỘ TRÌNH CỰ LY 3KM -->
+      <aside id="panel3km" onclick="selectDistanceCard('3km')" class="lg:col-span-3 lg:sticky lg:top-16 order-2 lg:order-1 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border border-slate-200/90 shadow-md">
+        <div class="bg-gradient-to-br from-[#0284c7] via-[#0369a1] to-[#0f172a] p-4 sm:p-5 text-white">
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-sky-100 mb-1.5">
+            🏃 SƠ ĐỒ BÊN TRÁI • NỮ & PHONG TRÀO
+          </div>
+          <h2 class="font-display italic text-2xl sm:text-[26px] font-extrabold uppercase tracking-wide leading-tight">
+            LỘ TRÌNH CỰ LY 3KM
+          </h2>
+          <p class="text-xs text-sky-100/90 mt-1">
+            Số BIB đầu 3 (3001 &rarr; 3999) • Cut-off: 45 phút
+          </p>
+        </div>
+
+        <div class="map-viewport" id="viewport3km">
+          <iframe id="iframeMap3km" src="" scrolling="no" allowfullscreen loading="lazy"></iframe>
+          <img id="imgMap3km" src="" alt="Sơ đồ đường chạy 3km" style="display:none;" onclick="event.stopPropagation(); openFullMap('3KM')">
+          <div class="absolute bottom-3 right-3 z-10">
+            <button type="button" onclick="event.stopPropagation(); openFullMap('3KM')" class="px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-orange-600 text-white text-xs font-bold shadow-lg border border-white/20 transition-all cursor-pointer">
+              ⤢ Phóng to bản đồ 3km
+            </button>
+          </div>
+        </div>
+
+        <div class="p-3.5 space-y-2.5 bg-white">
+          <div class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs">
+            <span class="font-bold text-slate-600 uppercase">⏰ GIỜ XUẤT PHÁT</span>
+            <strong id="time3km" class="text-slate-900 font-extrabold text-sm">06h30 • 08/11/2026</strong>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 border-l-4 border-sky-600 text-xs text-slate-700 leading-relaxed">
+            🏁 <strong class="text-slate-900">Lộ trình:</strong> Xuất phát tại UBND phường Tân Khai &rarr; Chạy đến trạm Check-point nhận vòng tay kiểm soát &rarr; Quay đầu về Đích nhận Huy hiệu <strong>FINISHER</strong>.
+          </div>
+        </div>
+      </aside>
+
+      <!-- CỘT GIỮA (6/12): HERO BANNER GIẢI CHẠY VIỆT NAM + FORM ĐĂNG KÝ -->
+      <section class="lg:col-span-6 order-1 lg:order-2 bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200/90">
+        
+        <!-- HERO BANNER VỚI ẢNH GIẢI CHẠY MARATHON TẠI VIỆT NAM -->
+        <div class="relative overflow-hidden text-white p-6 sm:p-8 text-center">
+          <img
+            src="https://i-vm.vnecdn.net/2026/08/02/7492583919007243997434213163933552984852719n-1785636504.jpg"
+            alt="Giải Việt Dã Phường Tân Khai Năm 2026"
+            referrerpolicy="no-referrer"
+            class="hero-bg-animate absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-[#0b132b]/80 via-[#0f172a]/75 to-[#7c2d12]/90"></div>
+
+          <div class="relative z-10 max-w-xl mx-auto">
+            <div id="heroChuDe" class="inline-block px-4 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-100 mb-3">
+              Thiết thực chào mừng Ngày Văn hóa Việt Nam (24/11)
+            </div>
+
+            <h1 id="heroTenGiai" class="font-display italic text-3xl sm:text-5xl font-extrabold uppercase tracking-wide leading-[1.08] text-white drop-shadow-md mb-3">
+              GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026
+            </h1>
+
+            <div class="space-y-1 text-xs sm:text-sm font-medium text-slate-100 mb-4">
+              <div>📅 Xuất phát: <strong id="heroNgay" class="text-amber-400 font-bold">06h30 • 08/11/2026</strong></div>
+              <div>📍 Địa điểm: <strong id="heroDiaDiem" class="text-amber-400 font-bold">Trung tâm Hành chính UBND phường Tân Khai</strong></div>
+            </div>
+
+            <!-- Đồng hồ đếm ngược -->
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full bg-slate-950/80 border border-white/20 backdrop-blur-md text-xs sm:text-sm mb-5">
+              <span class="text-slate-200 font-medium">⏳ Đếm ngược đến giờ G:</span>
+              <strong id="cdTimer" class="text-amber-400 font-mono-num font-extrabold tracking-wide">-- ngày : -- giờ : -- phút : -- giây</strong>
+            </div>
+
+            <!-- DẢI BĂNG VÀNG CHẠY CHỮ TỪ PHẢI QUA TRÁI THUẬN MẮT -->
+            <div class="finisher-banner relative overflow-hidden w-full py-2.5 rounded-2xl text-slate-950 font-extrabold text-xs sm:text-[13px] uppercase tracking-wide border-2 border-yellow-200">
+              <div class="finisher-marquee-track items-center">
+                <div class="flex items-center gap-2.5 px-8 whitespace-nowrap">
+                  <span>🏅 TẶNG HUY HIỆU KIM LOẠI "FINISHER" & GIẤY CHỨNG NHẬN KHI HOÀN THÀNH CỰ LY</span>
+                  <span class="text-rose-700">★</span>
+                  <span>CẤP SỐ BIB TỰ ĐỘNG NGAY SAU KHI ĐĂNG KÝ</span>
+                  <span class="text-rose-700">★</span>
+                </div>
+                <div class="flex items-center gap-2.5 px-8 whitespace-nowrap" aria-hidden="true">
+                  <span>🏅 TẶNG HUY HIỆU KIM LOẠI "FINISHER" & GIẤY CHỨNG NHẬN KHI HOÀN THÀNH CỰ LY</span>
+                  <span class="text-rose-700">★</span>
+                  <span>CẤP SỐ BIB TỰ ĐỘNG NGAY SAU KHI ĐĂNG KÝ</span>
+                  <span class="text-rose-700">★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NỘI DUNG TABS & FORM -->
+        <div class="p-5 sm:p-7">
+          <!-- THANH 3 TAB HIỆN ĐẠI -->
+          <div class="bg-slate-100 p-1.5 rounded-2xl grid grid-cols-1 sm:grid-cols-3 gap-1.5 mb-6 border border-slate-200/80">
+            <button type="button" id="tabBtn-CA_NHAN" onclick="switchTab('CA_NHAN')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md">
+              🏃 1. ĐĂNG KÝ CÁ NHÂN
+            </button>
+            <button type="button" id="tabBtn-TAP_THE" onclick="switchTab('TAP_THE')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
+              👥 2. TRƯỞNG ĐOÀN / KHU PHỐ
+            </button>
+            <button type="button" id="tabBtn-TRA_CUU" onclick="switchTab('TRA_CUU')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
+              🔍 3. TRA CỨU SỐ BIB
+            </button>
+          </div>
+
+          <!-- ================= TAB 1: ĐĂNG KÝ CÁ NHÂN ================= -->
+          <div id="tab-CA_NHAN" class="tab-section active space-y-5">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <label class="block text-xs sm:text-sm font-bold text-slate-900">
+                  Bước 1: Chọn cự ly đăng ký thi đấu (Tương ứng với sơ đồ bên trái & bên phải) <span class="text-rose-500">*</span>
+                </label>
+                <button type="button" onclick="openFullMap(document.getElementById('cn_cuLy').value === '3km' ? '3KM' : '5KM')" class="lg:hidden text-xs font-bold text-sky-600 underline cursor-pointer">
+                  🗺️ Xem sơ đồ đường chạy
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Card 3KM -->
+                <div id="card3km" onclick="selectDistanceCard('3km')" class="relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-slate-200 bg-white hover:border-sky-300">
+                  <div class="w-14 h-14 rounded-2xl bg-[#0284c7] text-white font-display italic font-extrabold text-xl flex items-center justify-center shrink-0 shadow-sm">
+                    3KM
+                  </div>
+                  <div class="flex-1 min-w-0 pr-5">
+                    <h3 class="font-bold text-slate-900 text-sm">Cự ly 3km (Nữ / Phong trào)</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">&larr; Xem sơ đồ bên trái • Cut-off: 45 phút • Cấp BIB 3001+</p>
+                  </div>
+                  <div id="check3km" class="w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-slate-300 bg-white text-transparent">✓</div>
+                </div>
+
+                <!-- Card 5KM -->
+                <div id="card5km" onclick="selectDistanceCard('5km')" class="relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-orange-500 bg-orange-50/50 shadow-md">
+                  <div class="w-14 h-14 rounded-2xl bg-[#d9480f] text-white font-display italic font-extrabold text-xl flex items-center justify-center shrink-0 shadow-sm">
+                    5KM
+                  </div>
+                  <div class="flex-1 min-w-0 pr-5">
+                    <h3 class="font-bold text-slate-900 text-sm">Cự ly 5km (Nam)</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Xem sơ đồ bên phải &rarr; • Cut-off: 60 phút • Cấp BIB 5001+</p>
+                  </div>
+                  <div id="check5km" class="w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-orange-500 bg-orange-500 text-white">✓</div>
+                </div>
+              </div>
+              <input type="hidden" id="cn_cuLy" value="5km">
+            </div>
+
+            <!-- Gợi ý thông minh khi chọn Nữ nhưng đang ở 5KM -->
+            <div id="genderHintBox" style="display:none;" class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 flex flex-wrap items-center justify-between gap-2 text-xs text-amber-900">
+              <span>💡 Bạn đang chọn giới tính <strong>Nữ</strong>, hệ thống khuyến nghị đăng ký <strong>Cự ly 3km (Nữ / Phong trào)</strong>.</span>
+              <button type="button" onclick="selectDistanceCard('3km')" class="px-3 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs cursor-pointer">
+                Chuyển sang 3km
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs sm:text-[13px] font-bold text-slate-800 mb-1.5">Họ và tên vận động viên <span class="text-rose-500">*</span></label>
+                <input type="text" id="cn_hoTen" onblur="this.value = formatVietnameseName(this.value)" placeholder="VD: Nguyễn Văn An" class="w-full px-4 py-3 text-sm font-medium bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none transition-all">
+              </div>
+              <div>
+                <label class="block text-xs sm:text-[13px] font-bold text-slate-800 mb-1.5">Số điện thoại / Zalo liên hệ <span class="text-rose-500">*</span></label>
+                <input type="tel" id="cn_sdt" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)" placeholder="VD: 0984724131" class="w-full px-4 py-3 text-sm font-medium bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none transition-all font-mono-num">
+              </div>
+              <div>
+                <label class="block text-xs sm:text-[13px] font-bold text-slate-800 mb-1.5">Năm sinh <span class="text-rose-500">*</span></label>
+                <input type="number" id="cn_namSinh" placeholder="VD: 1992" min="1945" max="2018" class="w-full px-4 py-3 text-sm font-medium bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none transition-all font-mono-num">
+              </div>
+              <div>
+                <label class="block text-xs sm:text-[13px] font-bold text-slate-800 mb-1.5">Giới tính <span class="text-rose-500">*</span></label>
+                <select id="cn_gioiTinh" onchange="autoSelectDistance()" class="w-full px-4 py-3 text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none transition-all cursor-pointer">
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs sm:text-[13px] font-bold text-slate-800 mb-1.5">Đơn vị / Khu phố đang sinh sống hoặc công tác <span class="text-rose-500">*</span></label>
+              <select id="cn_donVi" class="donvi-select w-full px-4 py-3 text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none transition-all cursor-pointer"></select>
+            </div>
+
+            <label class="flex items-start gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-slate-300 cursor-pointer transition-colors">
+              <input type="checkbox" id="cn_camKet" class="mt-0.5 w-5 h-5 rounded border-slate-300 text-orange-600 focus:ring-orange-500 shrink-0 cursor-pointer">
+              <span class="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed">
+                Tôi cam kết bản thân có đủ sức khỏe tham gia Giải Việt dã, không mắc các bệnh lý tim mạch/huyết áp và tự chịu trách nhiệm về an toàn sức khỏe của mình.
+              </span>
+            </label>
+
+            <button type="button" id="btnCn" onclick="submitCaNhan()" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#ff5500] to-[#e11d48] hover:from-[#ff6600] hover:to-[#f43f5e] text-white font-display italic font-extrabold text-base sm:text-lg tracking-wider uppercase shadow-lg shadow-orange-600/25 transition-all cursor-pointer">
+              ⚡ GỬI ĐĂNG KÝ & NHẬN THẺ BIB NGAY
+            </button>
+          </div>
+
+          <!-- ================= TAB 2: TRƯỞNG ĐOÀN / KHU PHỐ ================= -->
+          <div id="tab-TAP_THE" class="tab-section space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-800 mb-1.5">Họ và tên Trưởng đoàn / Người phụ trách *</label>
+                <input type="text" id="tt_truongDoan" onblur="this.value = formatVietnameseName(this.value)" placeholder="Nhập họ tên Trưởng đoàn..." class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-800 mb-1.5">Số điện thoại Zalo Trưởng đoàn *</label>
+                <input type="tel" id="tt_sdt" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)" placeholder="VD: 0984724131" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none font-mono-num">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1.5">Đơn vị / Khu phố đại diện *</label>
+              <select id="tt_donVi" class="donvi-select w-full px-3.5 py-2.5 text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none"></select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1.5">Danh sách Vận động viên của đơn vị (Mặc định 15 dòng - Bấm [+] để thêm dòng mới):</label>
+              <div class="overflow-x-auto border border-slate-200 rounded-2xl max-h-[420px] overflow-y-auto">
+                <table class="w-full border-collapse min-w-[560px] text-xs">
+                  <thead>
+                    <tr class="bg-slate-900 text-white uppercase">
+                      <th class="py-3 px-2 w-10 text-center sticky top-0 bg-slate-900">STT</th>
+                      <th class="py-3 px-2 text-left sticky top-0 bg-slate-900">Họ và tên Vận động viên</th>
+                      <th class="py-3 px-2 w-24 text-center sticky top-0 bg-slate-900">Năm sinh</th>
+                      <th class="py-3 px-2 w-24 text-center sticky top-0 bg-slate-900">Giới tính</th>
+                      <th class="py-3 px-2 w-32 text-center sticky top-0 bg-slate-900">Cự ly</th>
+                      <th class="py-3 px-2 w-12 text-center sticky top-0 bg-slate-900">Xóa</th>
+                    </tr>
+                  </thead>
+                  <tbody id="vdvBody" class="divide-y divide-slate-200"></tbody>
+                </table>
+              </div>
+
+              <div class="flex flex-wrap gap-2.5 mt-3">
+                <button type="button" onclick="addRows(1)" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold cursor-pointer transition-all">
+                  + Thêm 01 dòng VĐV
+                </button>
+                <button type="button" onclick="addRows(5)" class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold cursor-pointer transition-all">
+                  + Thêm nhanh 05 dòng
+                </button>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-slate-50 border-2 border-dashed border-slate-300">
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">📎 Hoặc đính kèm File Danh sách (Word/Excel) / Ảnh chụp viết tay (Không bắt buộc):</label>
+              <input type="file" id="tt_file" accept=".xlsx,.xls,.doc,.docx,.pdf,image/*" class="text-xs text-slate-600">
+            </div>
+
+            <label class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
+              <input type="checkbox" id="tt_camKet" class="mt-0.5 w-4 h-4 rounded text-orange-600 shrink-0">
+              <span class="text-xs text-slate-700 font-medium leading-relaxed">
+                Đơn vị cam kết các vận động viên trong danh sách đăng ký đều đảm bảo đủ sức khỏe tham gia Giải Việt dã phường Tân Khai năm 2026.
+              </span>
+            </label>
+
+            <button type="button" id="btnTt" onclick="submitTapThe()" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#ff5500] to-[#e11d48] text-white font-display italic font-extrabold text-base sm:text-lg tracking-wider uppercase shadow-lg cursor-pointer">
+              🚀 GỬI DANH SÁCH ĐOÀN & CẤP SỐ BIB
+            </button>
+          </div>
+
+          <!-- ================= TAB 3: TRA CỨU SỐ BIB ================= -->
+          <div id="tab-TRA_CUU" class="tab-section space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">Tìm theo Họ tên VĐV, Số BIB hoặc SĐT:</label>
+                <input type="text" id="tc_keyword" placeholder="Nhập tên, số BIB (VD: 5001) hoặc SĐT..." onkeyup="if(event.key==='Enter') searchBib()" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">Lọc theo Đơn vị / Khu phố:</label>
+                <select id="tc_donVi" onchange="searchBib()" class="w-full px-3.5 py-2.5 text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-orange-500 outline-none">
+                  <option value="ALL">-- Tất cả Đơn vị / Khu phố --</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" onclick="searchBib()" class="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-bold cursor-pointer transition-all">
+              🔍 TÌM KIẾM DANH SÁCH & SỐ BIB
+            </button>
+
+            <div class="overflow-x-auto border border-slate-200 rounded-2xl max-h-[420px] overflow-y-auto">
+              <table class="w-full border-collapse min-w-[560px] text-xs">
+                <thead>
+                  <tr class="bg-slate-900 text-white uppercase">
+                    <th class="py-3 px-2 w-24 text-center sticky top-0 bg-slate-900">SỐ BIB</th>
+                    <th class="py-3 px-2 text-left sticky top-0 bg-slate-900">Họ và tên VĐV</th>
+                    <th class="py-3 px-2 w-20 text-center sticky top-0 bg-slate-900">Năm sinh</th>
+                    <th class="py-3 px-2 w-20 text-center sticky top-0 bg-slate-900">Cự ly</th>
+                    <th class="py-3 px-2 text-left sticky top-0 bg-slate-900">Đơn vị / Khu phố</th>
+                    <th class="py-3 px-2 w-24 text-center sticky top-0 bg-slate-900">Thẻ BIB</th>
+                  </tr>
+                </thead>
+                <tbody id="searchResultBody" class="divide-y divide-slate-200">
+                  <tr><td colspan="6" class="p-6 text-center text-slate-500">Bấm nút tìm kiếm để xem danh sách số BIB đã cấp...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- THÔNG BÁO TRẠNG THÁI -->
+          <div id="statusBox" style="display:none;" class="mt-4 p-4 rounded-2xl text-xs sm:text-sm font-semibold whitespace-pre-line"></div>
+
+          <!-- ACCORDION 1: BẢNG VÀNG THI ĐUA CÁC KHU PHỐ / ĐƠN VỊ -->
+          <div class="mt-7 pt-5 border-t border-slate-200/80 space-y-2.5">
+            <div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 overflow-hidden">
+              <button type="button" onclick="toggleBox('leaderboardBox')" class="w-full px-4 py-3 flex items-center justify-between text-left text-xs sm:text-[13px] font-bold text-slate-800 hover:bg-slate-100 cursor-pointer">
+                <span>🏆 Bảng vàng thi đua số lượng VĐV giữa các Khu phố / Đơn vị</span>
+                <span class="text-slate-500">▼</span>
+              </button>
+              <div id="leaderboardBox" style="display:none;" class="px-4 pb-4 pt-2 space-y-2 border-t border-slate-200/60 bg-white text-xs">
+                <div id="leaderboardContent" class="space-y-2 text-slate-600">Đang tải thống kê...</div>
+              </div>
+            </div>
+
+            <!-- ACCORDION 2: CẨM NANG & LỊCH TRÌNH SÁNG 08/11/2026 -->
+            <div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 overflow-hidden">
+              <button type="button" onclick="toggleBox('guideBox')" class="w-full px-4 py-3 flex items-center justify-between text-left text-xs sm:text-[13px] font-bold text-slate-800 hover:bg-slate-100 cursor-pointer">
+                <span>ℹ️ Cẩm nang & Lịch trình tập trung sáng ngày chạy (08/11/2026)</span>
+                <span class="text-slate-500">▼</span>
+              </button>
+              <div id="guideBox" style="display:none;" class="px-4 pb-4 pt-2.5 space-y-2 border-t border-slate-200/60 bg-white text-xs text-slate-600 leading-relaxed">
+                <div>• <strong class="text-slate-900">05h45 – 06h15:</strong> VĐV có mặt tại Trung tâm Hành chính UBND phường Tân Khai, xuất trình ảnh Thẻ BIB trên điện thoại để nhận BIB giấy & kim băng.</div>
+                <div>• <strong class="text-slate-900">06h15 – 06h30:</strong> Khởi động chung và nghe phổ biến an toàn đường chạy.</div>
+                <div>• <strong class="text-slate-900">06h30:</strong> Xuất phát chính thức cự ly 5KM & 3KM. VĐV chạy đến trạm Check-point nhận vòng tay kiểm soát trước khi quay đầu về Đích.</div>
+                <div>• <strong class="text-slate-900">07h30 – 08h15:</strong> Trao Huy hiệu kim loại <strong>FINISHER</strong>, Giấy chứng nhận & trao giải thưởng tập thể, cá nhân.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER 4 DÒNG CĂN GIỮA TRANG -->
+          <footer class="mt-6 pt-5 border-t border-slate-200/80 text-center text-xs sm:text-[13px] text-slate-600 space-y-1.5">
+            <p class="font-bold text-slate-800">Ủy ban nhân dân phường Tân Khai</p>
+            <p class="font-semibold text-slate-700">Trung tâm Dịch vụ tổng hợp phường Tân Khai</p>
+            <p class="text-slate-600">
+              Zalo hỗ trợ BTC: <a href="https://zalo.me/0984724131" target="_blank" id="footerHotline" class="font-bold text-orange-600 hover:underline font-mono-num">0984.724.131</a>
+            </p>
+            <p class="font-bold text-slate-500 pt-1 text-xs">Developed by Trần Quốc Được</p>
+          </footer>
+        </div>
+      </section>
+
+      <!-- CỘT PHẢI (3/12): LỘ TRÌNH CỰ LY 5KM -->
+      <aside id="panel5km" onclick="selectDistanceCard('5km')" class="lg:col-span-3 lg:sticky lg:top-16 order-3 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border-2 border-orange-500 shadow-xl ring-4 ring-orange-500/15">
+        <div class="bg-gradient-to-br from-[#ff5500] via-[#c2410c] to-[#7c2d12] p-4 sm:p-5 text-white">
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-100 mb-1.5">
+            🔥 SƠ ĐỒ BÊN PHẢI • DÀNH CHO NAM
+          </div>
+          <h2 class="font-display italic text-2xl sm:text-[26px] font-extrabold uppercase tracking-wide leading-tight">
+            LỘ TRÌNH CỰ LY 5KM
+          </h2>
+          <p class="text-xs text-orange-100/90 mt-1">
+            Số BIB đầu 5 (5001 &rarr; 5999) • Cut-off: 60 phút
+          </p>
+        </div>
+
+        <div class="map-viewport" id="viewport5km">
+          <iframe id="iframeMap5km" src="" scrolling="no" allowfullscreen loading="lazy"></iframe>
+          <img id="imgMap5km" src="" alt="Sơ đồ đường chạy 5km" style="display:none;" onclick="event.stopPropagation(); openFullMap('5KM')">
+          <div class="absolute bottom-3 right-3 z-10">
+            <button type="button" onclick="event.stopPropagation(); openFullMap('5KM')" class="px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-orange-600 text-white text-xs font-bold shadow-lg border border-white/20 transition-all cursor-pointer">
+              ⤢ Phóng to bản đồ 5km
+            </button>
+          </div>
+        </div>
+
+        <div class="p-3.5 space-y-2.5 bg-white">
+          <div class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs">
+            <span class="font-bold text-slate-600 uppercase">⏰ GIỜ XUẤT PHÁT</span>
+            <strong id="time5km" class="text-slate-900 font-extrabold text-sm">06h30 • 08/11/2026</strong>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 border-l-4 border-orange-500 text-xs text-slate-700 leading-relaxed">
+            🏁 <strong class="text-slate-900">Lộ trình:</strong> Xuất phát tại UBND phường Tân Khai &rarr; Chạy đến trạm Check-point nhận vòng tay kiểm soát &rarr; Quay đầu về Đích nhận Huy hiệu <strong>FINISHER</strong>.
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- MODAL THẺ BIB ĐIỆN TỬ & TẢI ẢNH PNG -->
+  <div id="bibModal" style="display:none;" onclick="if(event.target===this) closeBibModal()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 sm:p-8 bg-gradient-to-b from-slate-900 to-slate-950 text-white text-center relative">
+        <div class="text-[11px] font-bold uppercase tracking-widest text-amber-400">UBND PHƯỜNG TÂN KHAI · NGÀY VĂN HÓA VIỆT NAM 24/11</div>
+        <div class="font-display italic text-2xl font-extrabold uppercase tracking-wider mt-0.5">GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI 2026</div>
+
+        <div class="bg-white text-slate-950 rounded-2xl py-6 px-4 text-center shadow-inner my-4">
+          <div id="ticketDistBadge" class="inline-block px-3 py-0.5 rounded-md text-xs font-extrabold uppercase tracking-wider text-white bg-orange-600 mb-2">
+            CỰ LY 5KM
+          </div>
+          <div id="ticketBib" class="font-display text-6xl sm:text-7xl font-black tracking-tight leading-none font-mono-num text-orange-600">
+            5001
+          </div>
+          <div id="ticketName" class="mt-3 pt-3 border-t border-slate-200 text-base sm:text-lg font-extrabold uppercase text-slate-900">
+            NGUYỄN VĂN AN
+          </div>
+          <div id="ticketMeta" class="text-xs font-semibold text-slate-500 mt-1">
+            Khu phố Tân Bình • Mã ĐK: VD26-001
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-300">* Bấm <strong>"Tải ảnh Thẻ BIB (.PNG)"</strong> bên dưới để lưu thẻ BIB sắc nét về điện thoại.</p>
+      </div>
+
+      <div class="p-4 bg-slate-50 flex flex-wrap items-center justify-between gap-2">
+        <button type="button" onclick="downloadCurrentBibPng()" class="px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold cursor-pointer shadow-sm">
+          📥 Tải ảnh Thẻ BIB (.PNG)
+        </button>
+        <button type="button" onclick="closeBibModal()" class="px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold cursor-pointer">
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL XEM BẢN ĐỒ TOÀN MÀN HÌNH (ẨN THANH TIÊU ĐỀ ĐEN GOOGLE) -->
+  <div id="mapModal" style="display:none;" onclick="if(event.target===this) closeFullMap()" class="fixed inset-0 z-50 bg-slate-950/85 flex items-center justify-center p-4">
+    <div class="w-full max-w-5xl h-[85vh] bg-white rounded-2xl overflow-hidden flex flex-col shadow-2xl">
+      <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between font-bold text-sm">
+        <span id="modalTitle">SƠ ĐỒ ĐƯỜNG CHẠY CHI TIẾT</span>
+        <button type="button" onclick="closeFullMap()" class="px-3.5 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold cursor-pointer">✕ Đóng bản đồ</button>
+      </div>
+      <div class="map-modal-body">
+        <iframe id="modalIframe" src="" scrolling="no" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =====================================================================
+    // CẤU HÌNH TỰ ĐỘNG NHẬN DIỆN MÔI TRƯỜNG (GOOGLE APPS SCRIPT HOẶC GITHUB)
+    // Nếu bạn chạy trên GitHub Pages, hãy dán Link Web App (exec) của Google Apps Script vào GAS_WEB_APP_URL bên dưới:
+    // =====================================================================
+    var GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw9vjVoP8S-rTHMr4uBkwthl5BxkUQo4l5lMHBs1bb6rjVc_A8WKCzV_CNnK7xcnSp8jw/exec';
+
+    var DEFAULT_CONFIG = {
+      TEN_GIAI: 'GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026',
+      CHU_DE: 'Thiết thực chào mừng Ngày Văn hóa Việt Nam (24/11)',
+      HOTLINE_ZALO: '0984.724.131',
+      NGAY_THI_DAU: '08/11/2026',
+      GIO_XUAT_PHAT: '06h30 • 08/11/2026',
+      ISO_COUNTDOWN: '2026-11-08T06:30:00+07:00',
+      DIA_DIEM: 'Trung tâm Hành chính UBND phường Tân Khai',
+      MAP_3KM_URL: 'https://www.google.com/maps/d/embed?mid=1ZmqE3m1NRzXZWk0hA6ulMwWKV9ndkPc&ehbc=2E312F&noprof=1',
+      MAP_5KM_URL: 'https://www.google.com/maps/d/embed?mid=1-JpFE_KVs2CNdWv-TeIIP2amNgZJaxM&ehbc=2E312F&noprof=1',
+      MAP_3KM_IMG: '',
+      MAP_5KM_IMG: '',
+      DANH_SACH_DON_VI: [
+        'Khu phố Tân Bình',
+        'Khu phố Tân Minh',
+        'Khu phố Tàu Ô',
+        'Khu phố Đồng Nơ',
+        'Khu phố Đồng Tâm',
+        'Khu phố Hiệp Thành',
+        'Khu phố Tân Hiệp',
+        'Khối Đảng - Đoàn thể phường Tân Khai',
+        'Cơ quan UBND phường Tân Khai',
+        'Trung tâm Dịch vụ tổng hợp phường',
+        'Trung tâm Phục vụ hành chính công phường',
+        'Công an phường Tân Khai',
+        'Ban CHQS phường Tân Khai',
+        'Trạm Y tế phường Tân Khai',
+        'Trường học trên địa bàn phường',
+        'Đơn vị / Doanh nghiệp khác'
+      ]
+    };
+
+    var APP_CONFIG = DEFAULT_CONFIG;
+    try {
+      // Khi chạy trong Google Apps Script, biến configJson sẽ được chèn tự động
+      var injected = <?!= typeof configJson !== 'undefined' ? configJson : 'null' ?>;
+      if (injected) APP_CONFIG = injected;
+    } catch (e) {}
+
+    var CURRENT_BIB_DATA = null;
+
+    window.onload = function() {
+      document.getElementById('heroTenGiai').textContent = APP_CONFIG.TEN_GIAI;
+      document.getElementById('heroChuDe').textContent = APP_CONFIG.CHU_DE;
+      document.getElementById('heroNgay').textContent = APP_CONFIG.GIO_XUAT_PHAT;
+      document.getElementById('heroDiaDiem').textContent = APP_CONFIG.DIA_DIEM;
+      document.getElementById('time3km').textContent = APP_CONFIG.GIO_XUAT_PHAT;
+      document.getElementById('time5km').textContent = APP_CONFIG.GIO_XUAT_PHAT;
+      document.getElementById('footerHotline').textContent = APP_CONFIG.HOTLINE_ZALO;
+
+      if (APP_CONFIG.MAP_3KM_IMG && APP_CONFIG.MAP_3KM_IMG.trim() !== '') {
+        document.getElementById('iframeMap3km').style.display = 'none';
+        var img3 = document.getElementById('imgMap3km');
+        img3.src = APP_CONFIG.MAP_3KM_IMG;
+        img3.style.display = 'block';
+      } else {
+        document.getElementById('iframeMap3km').src = APP_CONFIG.MAP_3KM_URL;
+      }
+
+      if (APP_CONFIG.MAP_5KM_IMG && APP_CONFIG.MAP_5KM_IMG.trim() !== '') {
+        document.getElementById('iframeMap5km').style.display = 'none';
+        var img5 = document.getElementById('imgMap5km');
+        img5.src = APP_CONFIG.MAP_5KM_IMG;
+        img5.style.display = 'block';
+      } else {
+        document.getElementById('iframeMap5km').src = APP_CONFIG.MAP_5KM_URL;
+      }
+
+      populateUnits(APP_CONFIG.DANH_SACH_DON_VI || []);
+      addRows(15);
+      loadLiveStats();
+      startCountdown();
+    };
+
+    function formatVietnameseName(raw) {
+      if (!raw) return '';
+      return raw.toString().trim().replace(/\s+/g, ' ').split(' ').filter(Boolean).map(function(w) {
+        return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+      }).join(' ');
+    }
+
+    function toggleBox(id) {
+      var el = document.getElementById(id);
+      el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+    }
+
+    function startCountdown() {
+      var target = new Date(APP_CONFIG.ISO_COUNTDOWN || '2026-11-08T06:30:00+07:00').getTime();
+      function updateTimer() {
+        var now = new Date().getTime();
+        var diff = target - now;
+        var el = document.getElementById('cdTimer');
+        if (diff <= 0) {
+          el.textContent = 'ĐÃ ĐẾN GIỜ XUẤT PHÁT!';
+          return;
+        }
+        var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((diff % (1000 * 60)) / 1000);
+        el.textContent = d + ' ngày : ' + (h < 10 ? '0' + h : h) + ' giờ : ' + (m < 10 ? '0' + m : m) + ' phút : ' + (s < 10 ? '0' + s : s) + ' giây';
+      }
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    function populateUnits(units) {
+      var selects = document.querySelectorAll('.donvi-select');
+      selects.forEach(function(sel) {
+        sel.innerHTML = '';
+        units.forEach(function(u) {
+          var opt = document.createElement('option');
+          opt.value = u; opt.textContent = u;
+          sel.appendChild(opt);
+        });
+      });
+
+      var tcSelect = document.getElementById('tc_donVi');
+      units.forEach(function(u) {
+        var opt = document.createElement('option');
+        opt.value = u; opt.textContent = u;
+        tcSelect.appendChild(opt);
+      });
+    }
+
+    function selectDistanceCard(dist) {
+      document.getElementById('cn_cuLy').value = dist;
+      var c3 = document.getElementById('card3km');
+      var c5 = document.getElementById('card5km');
+      var chk3 = document.getElementById('check3km');
+      var chk5 = document.getElementById('check5km');
+      var p3 = document.getElementById('panel3km');
+      var p5 = document.getElementById('panel5km');
+
+      if (dist === '3km') {
+        c3.className = 'relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-sky-600 bg-sky-50/50 shadow-md';
+        c5.className = 'relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-slate-200 bg-white hover:border-orange-300';
+        chk3.className = 'w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-sky-600 bg-sky-600 text-white';
+        chk5.className = 'w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-slate-300 bg-white text-transparent';
+        p3.className = 'lg:col-span-3 lg:sticky lg:top-16 order-2 lg:order-1 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border-2 border-sky-500 shadow-xl ring-4 ring-sky-500/15';
+        p5.className = 'lg:col-span-3 lg:sticky lg:top-16 order-3 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border border-slate-200/90 shadow-md';
+      } else {
+        c5.className = 'relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-orange-500 bg-orange-50/50 shadow-md';
+        c3.className = 'relative cursor-pointer rounded-2xl p-4 border-2 transition-all flex items-center gap-3.5 border-slate-200 bg-white hover:border-sky-300';
+        chk5.className = 'w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-orange-500 bg-orange-500 text-white';
+        chk3.className = 'w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-slate-300 bg-white text-transparent';
+        p5.className = 'lg:col-span-3 lg:sticky lg:top-16 order-3 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border-2 border-orange-500 shadow-xl ring-4 ring-orange-500/15';
+        p3.className = 'lg:col-span-3 lg:sticky lg:top-16 order-2 lg:order-1 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border border-slate-200/90 shadow-md';
+      }
+      checkGenderDistanceHint();
+    }
+
+    function autoSelectDistance() {
+      var gt = document.getElementById('cn_gioiTinh').value;
+      selectDistanceCard(gt === 'Nữ' ? '3km' : '5km');
+    }
+
+    function checkGenderDistanceHint() {
+      var gt = document.getElementById('cn_gioiTinh').value;
+      var dist = document.getElementById('cn_cuLy').value;
+      var hint = document.getElementById('genderHintBox');
+      if (hint) {
+        hint.style.display = (gt === 'Nữ' && dist === '5km') ? 'flex' : 'none';
+      }
+    }
+
+    function switchTab(mode) {
+      ['CA_NHAN', 'TAP_THE', 'TRA_CUU'].forEach(function(m) {
+        var btn = document.getElementById('tabBtn-' + m);
+        var sec = document.getElementById('tab-' + m);
+        if (m === mode) {
+          btn.className = 'seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md';
+          sec.classList.add('active');
+        } else {
+          btn.className = 'seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900';
+          sec.classList.remove('active');
+        }
+      });
+      document.getElementById('statusBox').style.display = 'none';
+      if (mode === 'TRA_CUU') searchBib();
+    }
+
+    function openFullMap(type) {
+      var modal = document.getElementById('mapModal');
+      var iframe = document.getElementById('modalIframe');
+      var title = document.getElementById('modalTitle');
+      if (type === '3KM') {
+        title.textContent = '🗺️ SƠ ĐỒ ĐƯỜNG CHẠY CỰ LY 3KM (NỮ & PHONG TRÀO)';
+        iframe.src = APP_CONFIG.MAP_3KM_URL;
+      } else {
+        title.textContent = '🗺️ SƠ ĐỒ ĐƯỜNG CHẠY CỰ LY 5KM (NAM)';
+        iframe.src = APP_CONFIG.MAP_5KM_URL;
+      }
+      modal.style.display = 'flex';
+    }
+
+    function closeFullMap() {
+      document.getElementById('mapModal').style.display = 'none';
+    }
+
+    function showBibModal(data) {
+      CURRENT_BIB_DATA = data;
+      var is3km = data.cuLy === '3km';
+      var badge = document.getElementById('ticketDistBadge');
+      var bibEl = document.getElementById('ticketBib');
+      badge.textContent = is3km ? 'CỰ LY 3KM · NỮ / PHONG TRÀO' : 'CỰ LY 5KM · DÀNH CHO NAM';
+      badge.className = 'inline-block px-3 py-0.5 rounded-md text-xs font-extrabold uppercase tracking-wider text-white mb-2 ' + (is3km ? 'bg-sky-600' : 'bg-orange-600');
+      bibEl.textContent = data.bib;
+      bibEl.className = 'font-display text-6xl sm:text-7xl font-black tracking-tight leading-none font-mono-num ' + (is3km ? 'text-sky-700' : 'text-orange-600');
+      document.getElementById('ticketName').textContent = data.hoTen;
+      document.getElementById('ticketMeta').textContent = data.donVi + (data.maDK ? ' • Mã ĐK: ' + data.maDK : '') + (data.namSinh ? ' • NS: ' + data.namSinh : '');
+      document.getElementById('bibModal').style.display = 'flex';
+    }
+
+    function closeBibModal() {
+      document.getElementById('bibModal').style.display = 'none';
+    }
+
+    function downloadCurrentBibPng() {
+      if (!CURRENT_BIB_DATA) return;
+      var d = CURRENT_BIB_DATA;
+      var canvas = document.createElement('canvas');
+      canvas.width = 1000;
+      canvas.height = 640;
+      var ctx = canvas.getContext('2d');
+      var is3km = d.cuLy === '3km';
+      var mainColor = is3km ? '#0284c7' : '#ea580c';
+
+      var bgGrad = ctx.createLinearGradient(0, 0, 0, 640);
+      bgGrad.addColorStop(0, '#0f172a');
+      bgGrad.addColorStop(1, '#020617');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1000, 640);
+
+      ctx.strokeStyle = mainColor;
+      ctx.lineWidth = 10;
+      ctx.strokeRect(15, 15, 970, 610);
+
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 20px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('UBND PHƯỜNG TÂN KHAI · CHÀO MỪNG NGÀY VĂN HÓA VIỆT NAM (24/11)', 500, 72);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 38px sans-serif';
+      ctx.fillText('GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026', 500, 120);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(70, 150, 860, 380);
+
+      ctx.fillStyle = mainColor;
+      ctx.fillRect(310, 175, 380, 44);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText(is3km ? 'CỰ LY 3KM · NỮ / PHONG TRÀO' : 'CỰ LY 5KM · DÀNH CHO NAM', 500, 205);
+
+      ctx.fillStyle = mainColor;
+      ctx.font = '900 160px monospace';
+      ctx.fillText(String(d.bib), 500, 370);
+
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '800 36px sans-serif';
+      ctx.fillText(String(d.hoTen || '').toUpperCase(), 500, 455);
+
+      ctx.fillStyle = '#475569';
+      ctx.font = '600 22px sans-serif';
+      ctx.fillText(d.donVi + (d.namSinh ? '  •  Năm sinh: ' + d.namSinh : ''), 500, 500);
+
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '600 20px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('⏰ Xuất phát: 06h30 · Ngày 08/11/2026 tại UBND phường Tân Khai', 75, 585);
+
+      ctx.fillStyle = '#34d399';
+      ctx.textAlign = 'right';
+      ctx.fillText('✔ ĐÃ CẤP SỐ BIB', 925, 585);
+
+      var link = document.createElement('a');
+      link.download = 'BIB-' + d.bib + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function addRows(count) {
+      var tbody = document.getElementById('vdvBody');
+      for (var i = 0; i < count; i++) {
+        var tr = document.createElement('tr');
+        tr.className = 'bg-white even:bg-slate-50';
+        tr.innerHTML =
+          '<td class="row-index py-2 px-2 text-center font-bold text-slate-500"></td>' +
+          '<td class="py-1.5 px-2"><input type="text" class="v-name w-full px-2.5 py-1.5 border border-slate-200 rounded-lg" onblur="this.value=formatVietnameseName(this.value)" placeholder="Nhập họ và tên VĐV..."></td>' +
+          '<td class="py-1.5 px-2"><input type="number" class="v-year w-full px-2 py-1.5 border border-slate-200 rounded-lg text-center" placeholder="1992" min="1945" max="2018"></td>' +
+          '<td class="py-1.5 px-2"><select class="v-gender w-full px-2 py-1.5 border border-slate-200 rounded-lg" onchange="syncRowDist(this)"><option value="Nam">Nam</option><option value="Nữ">Nữ</option></select></td>' +
+          '<td class="py-1.5 px-2"><select class="v-dist w-full px-2 py-1.5 border border-slate-200 rounded-lg font-bold"><option value="5km">5km Nam</option><option value="3km">3km Nữ/PT</option></select></td>' +
+          '<td class="py-1.5 px-2 text-center"><button type="button" class="w-7 h-7 rounded-lg bg-rose-100 hover:bg-rose-600 text-rose-600 hover:text-white font-bold cursor-pointer" onclick="removeRow(this)">×</button></td>';
+        tbody.appendChild(tr);
+      }
+      renumberRows();
+    }
+
+    function syncRowDist(sel) {
+      var row = sel.closest('tr');
+      row.querySelector('.v-dist').value = (sel.value === 'Nữ') ? '3km' : '5km';
+    }
+
+    function removeRow(btn) {
+      var tbody = document.getElementById('vdvBody');
+      if (tbody.children.length > 1) {
+        btn.closest('tr').remove();
+        renumberRows();
+      }
+    }
+
+    function renumberRows() {
+      document.querySelectorAll('#vdvBody tr').forEach(function(r, idx) {
+        r.querySelector('.row-index').textContent = idx + 1;
+      });
+    }
+
+    function showStatus(msg, isError) {
+      var box = document.getElementById('statusBox');
+      box.textContent = msg;
+      box.style.display = 'block';
+      box.className = isError
+        ? 'mt-4 p-4 rounded-2xl text-xs sm:text-sm font-semibold whitespace-pre-line bg-rose-50 text-rose-800 border border-rose-200'
+        : 'mt-4 p-4 rounded-2xl text-xs sm:text-sm font-semibold whitespace-pre-line bg-emerald-50 text-emerald-800 border border-emerald-200';
+    }
+
+    // HÀM KẾT NỐI ĐA NĂNG: TỰ ĐỘNG DÙNG google.script.run HOẶC FETCH QUA WEB APP URL KHI CHẠY TRÊN GITHUB
+    function callBackend(actionName, payload, onSuccess, onFailure) {
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        var runner = google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure);
+        if (actionName === 'guiDangKyTuWebApp') runner.guiDangKyTuWebApp(payload);
+        else if (actionName === 'traCuuBibWebApp') runner.traCuuBibWebApp(payload.keyword, payload.donVi);
+        return;
+      }
+
+      if (GAS_WEB_APP_URL && GAS_WEB_APP_URL.trim() !== '') {
+        fetch(GAS_WEB_APP_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(actionName === 'traCuuBibWebApp' ? { action: 'traCuu', keyword: payload.keyword, donVi: payload.donVi } : payload)
+        })
+          .then(function(r) { return r.json(); })
+          .then(onSuccess)
+          .catch(onFailure);
+        return;
+      }
+
+      onFailure({ message: 'Để lưu vào Google Sheet khi chạy trên GitHub, hãy dán Link Web App (script.google.com/macros/s/.../exec) vào biến GAS_WEB_APP_URL trong file index.html!' });
+    }
+
+    function submitCaNhan() {
+      var hoTen = formatVietnameseName(document.getElementById('cn_hoTen').value);
+      var sdt = document.getElementById('cn_sdt').value.replace(/[^0-9]/g, '');
+      var namSinh = document.getElementById('cn_namSinh').value.trim();
+      var gioiTinh = document.getElementById('cn_gioiTinh').value;
+      var donVi = document.getElementById('cn_donVi').value;
+      var cuLy = document.getElementById('cn_cuLy').value;
+      var camKet = document.getElementById('cn_camKet').checked;
+
+      document.getElementById('cn_hoTen').value = hoTen;
+      document.getElementById('cn_sdt').value = sdt;
+
+      if (!hoTen || !sdt || !namSinh) return showStatus('⚠️ Vui lòng điền đầy đủ Họ tên, Số điện thoại và Năm sinh!', true);
+      if (!camKet) return showStatus('⚠️ Vui lòng tích chọn ô Cam kết sức khỏe trước khi gửi!', true);
+
+      var btn = document.getElementById('btnCn');
+      btn.disabled = true; btn.textContent = '⏳ ĐANG XỬ LÝ & CẤP SỐ BIB...';
+
+      callBackend(
+        'guiDangKyTuWebApp',
+        { mode: 'CA_NHAN', hoTen: hoTen, sdt: sdt, namSinh: namSinh, gioiTinh: gioiTinh, donVi: donVi, cuLy: cuLy },
+        function(res) {
+          btn.disabled = false; btn.textContent = '⚡ GỬI ĐĂNG KÝ & NHẬN THẺ BIB NGAY';
+          if (res && res.success) {
+            showBibModal(res);
+            if (res.isDuplicate) {
+              showStatus('ℹ️ ' + res.message, false);
+            } else {
+              document.getElementById('statusBox').style.display = 'none';
+              document.getElementById('cn_hoTen').value = '';
+            }
+            loadLiveStats();
+          } else {
+            showStatus((res && res.message) || 'Có lỗi xảy ra', true);
+          }
+        },
+        function(err) {
+          btn.disabled = false; btn.textContent = '⚡ GỬI ĐĂNG KÝ & NHẬN THẺ BIB NGAY';
+          showStatus('Lỗi: ' + (err && err.message ? err.message : err), true);
+        }
+      );
+    }
+
+    function submitTapThe() {
+      var truongDoan = formatVietnameseName(document.getElementById('tt_truongDoan').value);
+      var sdt = document.getElementById('tt_sdt').value.replace(/[^0-9]/g, '');
+      var donVi = document.getElementById('tt_donVi').value;
+      var camKet = document.getElementById('tt_camKet').checked;
+      var fileInput = document.getElementById('tt_file');
+
+      if (!truongDoan || !sdt) return showStatus('⚠️ Vui lòng nhập Họ tên và SĐT Zalo của Trưởng đoàn!', true);
+      if (!camKet) return showStatus('⚠️ Vui lòng tích chọn xác nhận sức khỏe của đoàn!', true);
+
+      var dsVdv = [];
+      document.querySelectorAll('#vdvBody tr').forEach(function(r) {
+        var name = formatVietnameseName(r.querySelector('.v-name').value);
+        var year = r.querySelector('.v-year').value.trim();
+        var gender = r.querySelector('.v-gender').value;
+        var dist = r.querySelector('.v-dist').value;
+        if (name) dsVdv.push({ hoTen: name, namSinh: year, gioiTinh: gender, cuLy: dist });
+      });
+
+      if (dsVdv.length === 0 && fileInput.files.length === 0) {
+        return showStatus('⚠️ Vui lòng nhập ít nhất 01 VĐV vào bảng hoặc đính kèm file danh sách!', true);
+      }
+
+      var btn = document.getElementById('btnTt');
+      btn.disabled = true; btn.textContent = '⏳ ĐANG LƯU DANH SÁCH ĐOÀN & CẤP BIB...';
+
+      var payload = { mode: 'TAP_THE', truongDoan: truongDoan, sdt: sdt, donVi: donVi, danhSachVdv: dsVdv };
+
+      if (fileInput.files.length > 0) {
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          payload.fileName = file.name;
+          payload.mimeType = file.type;
+          payload.fileData = e.target.result.split(',')[1];
+          sendTeamPayload(payload, btn);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        sendTeamPayload(payload, btn);
+      }
+    }
+
+    function sendTeamPayload(payload, btn) {
+      callBackend(
+        'guiDangKyTuWebApp',
+        payload,
+        function(res) {
+          btn.disabled = false; btn.textContent = '🚀 GỬI DANH SÁCH ĐOÀN & CẤP SỐ BIB';
+          if (res && res.success) {
+            var detail = (res.issuedList || []).map(function(x) { return '• ' + x.hoTen + ' (' + x.cuLy + ') -> Số BIB: ' + x.bib; }).join('\n');
+            showStatus('🎉 ' + res.message + (detail ? '\n\nDANH SÁCH SỐ BIB ĐÃ CẤP:\n' + detail : ''), false);
+            loadLiveStats();
+          } else {
+            showStatus((res && res.message) || 'Có lỗi xảy ra', true);
+          }
+        },
+        function(err) {
+          btn.disabled = false; btn.textContent = '🚀 GỬI DANH SÁCH ĐOÀN & CẤP SỐ BIB';
+          showStatus('Lỗi: ' + (err && err.message ? err.message : err), true);
+        }
+      );
+    }
+
+    function renderLeaderboard(unitStats) {
+      var box = document.getElementById('leaderboardContent');
+      if (!box || !unitStats || !unitStats.length) return;
+      var maxVal = Math.max(1, unitStats[0].total || 1);
+      box.innerHTML = unitStats.map(function(item, idx) {
+        var pct = Math.max(6, Math.round((item.total / maxVal) * 100));
+        var medal = idx === 0 ? '🥇 ' : idx === 1 ? '🥈 ' : idx === 2 ? '🥉 ' : (idx + 1) + '. ';
+        return '<div class="space-y-1 pt-1">' +
+          '<div class="flex items-center justify-between text-xs">' +
+            '<span class="font-bold text-slate-800">' + medal + item.ward + '</span>' +
+            '<span class="font-mono-num text-slate-600 font-semibold"><strong class="text-slate-900">' + item.total + '</strong> VĐV (3km: ' + item.c3 + ' · 5km: ' + item.c5 + ')</span>' +
+          '</div>' +
+          '<div class="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">' +
+            '<div class="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-400" style="width:' + pct + '%"></div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function loadLiveStats() {
+      callBackend(
+        'traCuuBibWebApp',
+        { keyword: '', donVi: 'ALL' },
+        function(res) {
+          if (!res) return;
+          document.getElementById('statTotal').textContent = res.totalCount || 0;
+          document.getElementById('stat5km').textContent = res.count5km || 0;
+          document.getElementById('stat3km').textContent = res.count3km || 0;
+          if (res.unitStats) renderLeaderboard(res.unitStats);
+        },
+        function() {}
+      );
+    }
+
+    function searchBib() {
+      var kw = document.getElementById('tc_keyword').value;
+      var dv = document.getElementById('tc_donVi').value;
+      var tbody = document.getElementById('searchResultBody');
+      tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">⏳ Đang tải dữ liệu từ Google Sheets...</td></tr>';
+
+      callBackend(
+        'traCuuBibWebApp',
+        { keyword: kw, donVi: dv },
+        function(res) {
+          if (!res) return;
+          document.getElementById('statTotal').textContent = res.totalCount || 0;
+          document.getElementById('stat5km').textContent = res.count5km || 0;
+          document.getElementById('stat3km').textContent = res.count3km || 0;
+          if (res.unitStats) renderLeaderboard(res.unitStats);
+
+          if (!res.results || res.results.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">Không tìm thấy vận động viên nào phù hợp.</td></tr>';
+            return;
+          }
+          tbody.innerHTML = '';
+          res.results.forEach(function(r) {
+            var badgeColor = r.cuLy === '5km' ? '#ea580c' : '#0284c7';
+            var tr = document.createElement('tr');
+            tr.className = 'bg-white even:bg-slate-50 hover:bg-amber-50/40';
+            tr.innerHTML =
+              '<td class="py-2.5 px-2 text-center"><strong style="background:' + badgeColor + '; color:#fff; padding:4px 10px; border-radius:8px;" class="font-mono-num">' + r.bib + '</strong></td>' +
+              '<td class="py-2.5 px-2 font-bold text-slate-900">' + r.hoTen + '</td>' +
+              '<td class="py-2.5 px-2 text-center font-mono-num">' + r.namSinh + '</td>' +
+              '<td class="py-2.5 px-2 text-center font-bold">' + r.cuLy + '</td>' +
+              '<td class="py-2.5 px-2 text-slate-700">' + r.donVi + '</td>' +
+              '<td class="py-2.5 px-2 text-center"><button type="button" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-orange-600 text-white text-[11px] font-bold cursor-pointer">Xem BIB</button></td>';
+            tr.querySelector('button').onclick = function() {
+              showBibModal(r);
+            };
+            tbody.appendChild(tr);
+          });
+        },
+        function(err) {
+          tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-rose-600">' + (err && err.message ? err.message : 'Không thể tải dữ liệu') + '</td></tr>';
+        }
+      );
+    }
+  </script>
+</body>
+</html>
