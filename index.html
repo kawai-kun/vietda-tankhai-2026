@@ -161,7 +161,7 @@
         </div>
 
         <div class="map-viewport" id="viewport3km">
-          <iframe id="iframeMap3km" src="" scrolling="no" allowfullscreen loading="lazy"></iframe>
+          <iframe id="iframeMap3km" src="https://www.google.com/maps/d/embed?mid=1ZmqE3m1NRzXZWk0hA6ulMwWKV9ndkPc&ehbc=2E312F&noprof=1" scrolling="no" allowfullscreen loading="lazy"></iframe>
           <img id="imgMap3km" src="" alt="Sơ đồ đường chạy 3km" style="display:none;" onclick="event.stopPropagation(); openFullMap('3KM')">
           <div class="absolute bottom-3 right-3 z-10">
             <button type="button" onclick="event.stopPropagation(); openFullMap('3KM')" class="px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-orange-600 text-white text-xs font-bold shadow-lg border border-white/20 transition-all cursor-pointer">
@@ -448,7 +448,7 @@
                 <span class="text-slate-500">▼</span>
               </button>
               <div id="leaderboardBox" style="display:none;" class="px-4 pb-4 pt-2 space-y-2 border-t border-slate-200/60 bg-white text-xs">
-                <div id="leaderboardContent" class="space-y-2 text-slate-600">Đang tải thống kê...</div>
+                <div id="leaderboardContent" class="space-y-2 text-slate-600">Chưa có dữ liệu thống kê.</div>
               </div>
             </div>
 
@@ -494,7 +494,7 @@
         </div>
 
         <div class="map-viewport" id="viewport5km">
-          <iframe id="iframeMap5km" src="" scrolling="no" allowfullscreen loading="lazy"></iframe>
+          <iframe id="iframeMap5km" src="https://www.google.com/maps/d/embed?mid=1-JpFE_KVs2CNdWv-TeIIP2amNgZJaxM&ehbc=2E312F&noprof=1" scrolling="no" allowfullscreen loading="lazy"></iframe>
           <img id="imgMap5km" src="" alt="Sơ đồ đường chạy 5km" style="display:none;" onclick="event.stopPropagation(); openFullMap('5KM')">
           <div class="absolute bottom-3 right-3 z-10">
             <button type="button" onclick="event.stopPropagation(); openFullMap('5KM')" class="px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-orange-600 text-white text-xs font-bold shadow-lg border border-white/20 transition-all cursor-pointer">
@@ -566,10 +566,12 @@
     </div>
   </div>
 
+  <!-- Dữ liệu nhúng an toàn khi chạy trong Google Apps Script (Không gây lỗi cú pháp trên GitHub Pages) -->
+  <script id="gas-config-data" type="application/json"><?!= typeof configJson !== 'undefined' ? configJson : '' ?></script>
+
   <script>
     // =====================================================================
-    // CẤU HÌNH TỰ ĐỘNG NHẬN DIỆN MÔI TRƯỜNG (GOOGLE APPS SCRIPT HOẶC GITHUB)
-    // Nếu bạn chạy trên GitHub Pages, hãy dán Link Web App (exec) của Google Apps Script vào GAS_WEB_APP_URL bên dưới:
+    // LINK WEB APP GOOGLE APPS SCRIPT ĐỂ LƯU DỮ LIỆU VỀ GOOGLE SHEET KHI CHẠY TRÊN GITHUB:
     // =====================================================================
     var GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw9vjVoP8S-rTHMr4uBkwthl5BxkUQo4l5lMHBs1bb6rjVc_A8WKCzV_CNnK7xcnSp8jw/exec';
 
@@ -607,14 +609,36 @@
 
     var APP_CONFIG = DEFAULT_CONFIG;
     try {
-      // Khi chạy trong Google Apps Script, biến configJson sẽ được chèn tự động
-      var injected = <?!= typeof configJson !== 'undefined' ? configJson : 'null' ?>;
-      if (injected) APP_CONFIG = injected;
+      var cfgNode = document.getElementById('gas-config-data');
+      if (cfgNode && cfgNode.textContent) {
+        var rawText = cfgNode.textContent.trim();
+        if (rawText.charAt(0) === '{') {
+          APP_CONFIG = JSON.parse(rawText);
+        }
+      }
     } catch (e) {}
 
     var CURRENT_BIB_DATA = null;
+    var LOCAL_STORAGE_KEY = 'vietda_tankhai_2026_local_db';
 
-    window.onload = function() {
+    function getLocalAthletes() {
+      try {
+        var raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveLocalAthletes(list) {
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
+      } catch (e) {}
+    }
+
+    function initApp() {
       document.getElementById('heroTenGiai').textContent = APP_CONFIG.TEN_GIAI;
       document.getElementById('heroChuDe').textContent = APP_CONFIG.CHU_DE;
       document.getElementById('heroNgay').textContent = APP_CONFIG.GIO_XUAT_PHAT;
@@ -645,7 +669,13 @@
       addRows(15);
       loadLiveStats();
       startCountdown();
-    };
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
 
     function formatVietnameseName(raw) {
       if (!raw) return '';
@@ -691,6 +721,7 @@
       });
 
       var tcSelect = document.getElementById('tc_donVi');
+      tcSelect.innerHTML = '<option value="ALL">-- Tất cả Đơn vị / Khu phố --</option>';
       units.forEach(function(u) {
         var opt = document.createElement('option');
         opt.value = u; opt.textContent = u;
@@ -901,6 +932,127 @@
         : 'mt-4 p-4 rounded-2xl text-xs sm:text-sm font-semibold whitespace-pre-line bg-emerald-50 text-emerald-800 border border-emerald-200';
     }
 
+    // XỬ LÝ DỰ PHÒNG TRÊN TRÌNH DUYỆT NẾU CHƯA GẮN LINK GOOGLE SHEET
+    function runLocalFallback(actionName, payload, onSuccess) {
+      var list = getLocalAthletes();
+      if (actionName === 'guiDangKyTuWebApp') {
+        if (payload.mode === 'CA_NHAN') {
+          var existing = list.find(function(x) {
+            return x.hoTen.toLowerCase() === payload.hoTen.toLowerCase() && x.sdt === payload.sdt;
+          });
+          if (existing) {
+            onSuccess({
+              success: true,
+              isDuplicate: true,
+              mode: 'CA_NHAN',
+              bib: existing.bib,
+              maDK: existing.maDK,
+              hoTen: existing.hoTen,
+              donVi: existing.donVi,
+              cuLy: existing.cuLy,
+              namSinh: existing.namSinh,
+              gioiTinh: existing.gioiTinh,
+              message: 'VĐV ' + existing.hoTen + ' đã được cấp số BIB #' + existing.bib + ' trước đó!'
+            });
+            return;
+          }
+          var max5 = 5000, max3 = 3000;
+          list.forEach(function(x) {
+            var b = parseInt(x.bib, 10);
+            if (b >= 5000 && b < 6000 && b > max5) max5 = b;
+            if (b >= 3000 && b < 4000 && b > max3) max3 = b;
+          });
+          var newBib = payload.cuLy === '5km' ? (max5 + 1) : (max3 + 1);
+          var maDK = 'VD26-' + String(list.length + 1).padStart(3, '0');
+          var item = {
+            maDK: maDK,
+            bib: String(newBib),
+            hoTen: payload.hoTen,
+            sdt: payload.sdt,
+            namSinh: payload.namSinh,
+            gioiTinh: payload.gioiTinh,
+            donVi: payload.donVi,
+            cuLy: payload.cuLy
+          };
+          list.push(item);
+          saveLocalAthletes(list);
+          onSuccess({
+            success: true,
+            isDuplicate: false,
+            mode: 'CA_NHAN',
+            bib: item.bib,
+            maDK: item.maDK,
+            hoTen: item.hoTen,
+            donVi: item.donVi,
+            cuLy: item.cuLy,
+            namSinh: item.namSinh,
+            gioiTinh: item.gioiTinh,
+            message: 'Đăng ký thành công!'
+          });
+        } else {
+          var issued = [];
+          (payload.danhSachVdv || []).forEach(function(v) {
+            var max5 = 5000, max3 = 3000;
+            list.forEach(function(x) {
+              var b = parseInt(x.bib, 10);
+              if (b >= 5000 && b < 6000 && b > max5) max5 = b;
+              if (b >= 3000 && b < 4000 && b > max3) max3 = b;
+            });
+            var newBib = v.cuLy === '5km' ? (max5 + 1) : (max3 + 1);
+            var maDK = 'VD26-' + String(list.length + 1).padStart(3, '0');
+            var rec = {
+              maDK: maDK,
+              bib: String(newBib),
+              hoTen: v.hoTen,
+              sdt: payload.sdt,
+              namSinh: v.namSinh,
+              gioiTinh: v.gioiTinh,
+              donVi: payload.donVi,
+              cuLy: v.cuLy
+            };
+            list.push(rec);
+            issued.push(rec);
+          });
+          saveLocalAthletes(list);
+          onSuccess({
+            success: true,
+            mode: 'TAP_THE',
+            donVi: payload.donVi,
+            truongDoan: payload.truongDoan,
+            issuedList: issued,
+            message: 'Đã đăng ký thành công cho đoàn ' + payload.donVi + ' (' + issued.length + ' VĐV)!'
+          });
+        }
+      } else if (actionName === 'traCuuBibWebApp') {
+        var kw = (payload.keyword || '').toLowerCase().trim();
+        var dv = (payload.donVi || 'ALL').trim();
+        var c5 = 0, c3 = 0;
+        var unitMap = {};
+        (APP_CONFIG.DANH_SACH_DON_VI || []).forEach(function(u) {
+          unitMap[u] = { ward: u, total: 0, c3: 0, c5: 0 };
+        });
+        var filtered = [];
+        list.forEach(function(r) {
+          if (r.cuLy === '5km') c5++; else c3++;
+          if (!unitMap[r.donVi]) unitMap[r.donVi] = { ward: r.donVi, total: 0, c3: 0, c5: 0 };
+          unitMap[r.donVi].total++;
+          if (r.cuLy === '5km') unitMap[r.donVi].c5++; else unitMap[r.donVi].c3++;
+
+          var matchDv = (!dv || dv === 'ALL' || r.donVi === dv);
+          var matchKw = (!kw || r.hoTen.toLowerCase().indexOf(kw) !== -1 || String(r.bib).indexOf(kw) !== -1 || String(r.sdt).indexOf(kw) !== -1);
+          if (matchDv && matchKw) filtered.push(r);
+        });
+        var unitStats = Object.keys(unitMap).map(function(k) { return unitMap[k]; }).sort(function(a, b) { return b.total - a.total; });
+        onSuccess({
+          totalCount: list.length,
+          count5km: c5,
+          count3km: c3,
+          unitStats: unitStats,
+          results: filtered.slice().reverse()
+        });
+      }
+    }
+
     // HÀM KẾT NỐI ĐA NĂNG: TỰ ĐỘNG DÙNG google.script.run HOẶC FETCH QUA WEB APP URL KHI CHẠY TRÊN GITHUB
     function callBackend(actionName, payload, onSuccess, onFailure) {
       if (typeof google !== 'undefined' && google.script && google.script.run) {
@@ -911,7 +1063,7 @@
       }
 
       if (GAS_WEB_APP_URL && GAS_WEB_APP_URL.trim() !== '') {
-        fetch(GAS_WEB_APP_URL, {
+        fetch(GAS_WEB_APP_URL.trim(), {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(actionName === 'traCuuBibWebApp' ? { action: 'traCuu', keyword: payload.keyword, donVi: payload.donVi } : payload)
@@ -922,7 +1074,7 @@
         return;
       }
 
-      onFailure({ message: 'Để lưu vào Google Sheet khi chạy trên GitHub, hãy dán Link Web App (script.google.com/macros/s/.../exec) vào biến GAS_WEB_APP_URL trong file index.html!' });
+      runLocalFallback(actionName, payload, onSuccess);
     }
 
     function submitCaNhan() {
@@ -963,7 +1115,7 @@
         },
         function(err) {
           btn.disabled = false; btn.textContent = '⚡ GỬI ĐĂNG KÝ & NHẬN THẺ BIB NGAY';
-          showStatus('Lỗi: ' + (err && err.message ? err.message : err), true);
+          showStatus('Lỗi kết nối Google Sheet: ' + (err && err.message ? err.message : err), true);
         }
       );
     }
@@ -1070,7 +1222,7 @@
       var kw = document.getElementById('tc_keyword').value;
       var dv = document.getElementById('tc_donVi').value;
       var tbody = document.getElementById('searchResultBody');
-      tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">⏳ Đang tải dữ liệu từ Google Sheets...</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">⏳ Đang tải dữ liệu...</td></tr>';
 
       callBackend(
         'traCuuBibWebApp',
