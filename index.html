@@ -197,12 +197,23 @@
           <div class="absolute inset-0 bg-gradient-to-b from-[#0b132b]/80 via-[#0f172a]/75 to-[#7c2d12]/90"></div>
 
           <div class="relative z-10 max-w-xl mx-auto">
-            <div id="heroChuDe" class="inline-block px-4 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-100 mb-3">
-              Thiết thực chào mừng Ngày Văn hóa Việt Nam (24/11)
+            <!-- CHỦ ĐỀ: ĐIỂM NHẤN TRỌNG ĐIỂM HƯỞNG ỨNG TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT -->
+            <div id="heroChuDe" class="inline-flex flex-wrap items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-amber-950/80 via-rose-950/70 to-amber-950/80 backdrop-blur-md border border-amber-400/80 shadow-lg shadow-amber-500/20 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-100 mb-3.5">
+              <span class="text-amber-400 text-sm">★</span>
+              <span>HOẠT ĐỘNG TRỌNG ĐIỂM HƯỞNG ỨNG</span>
+              <span class="text-white font-extrabold px-2 py-0.5 rounded-lg bg-amber-500/30 border border-amber-300/60 text-amber-200">“TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT”</span>
+              <span>PHƯỜNG TÂN KHAI NĂM 2026</span>
+              <span class="text-amber-400 text-sm">★</span>
             </div>
 
-            <h1 id="heroTenGiai" class="font-display italic text-3xl sm:text-5xl font-extrabold uppercase tracking-wide leading-[1.08] text-white drop-shadow-md mb-3">
-              GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026
+            <!-- TIÊU ĐỀ 2 HÀNG CÂN ĐỐI: [GIẢI VIỆT DÃ] / [PHƯỜNG TÂN KHAI NĂM 2026] -->
+            <h1 id="heroTenGiai" class="font-display italic font-black uppercase tracking-wide leading-tight text-white drop-shadow-xl mb-4">
+              <span class="block text-3xl sm:text-5xl md:text-6xl text-white tracking-wide">
+                GIẢI VIỆT DÃ
+              </span>
+              <span class="block text-2xl sm:text-4xl md:text-[42px] text-amber-400 tracking-wider mt-1 sm:mt-2">
+                PHƯỜNG TÂN KHAI NĂM 2026
+              </span>
             </h1>
 
             <div class="space-y-1 text-xs sm:text-sm font-medium text-slate-100 mb-4">
@@ -582,7 +593,7 @@
 
     var DEFAULT_CONFIG = {
       TEN_GIAI: 'GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026',
-      CHU_DE: 'Thiết thực chào mừng Ngày Văn hóa Việt Nam (24/11)',
+      CHU_DE: 'Hoạt động trọng điểm hưởng ứng “Tuần Văn hóa - Đại đoàn kết” phường Tân Khai năm 2026',
       HOTLINE_ZALO: '0984.724.131',
       NGAY_THI_DAU: '15/11/2026',
       GIO_XUAT_PHAT: '06h30 • 15/11/2026',
@@ -644,8 +655,17 @@
     }
 
     function initApp() {
-      document.getElementById('heroTenGiai').textContent = APP_CONFIG.TEN_GIAI;
-      document.getElementById('heroChuDe').textContent = APP_CONFIG.CHU_DE;
+      if (APP_CONFIG.TEN_GIAI && APP_CONFIG.TEN_GIAI !== DEFAULT_CONFIG.TEN_GIAI) {
+        var parts = APP_CONFIG.TEN_GIAI.split('PHƯỜNG');
+        if (parts.length > 1) {
+          document.getElementById('heroTenGiai').innerHTML = '<span class="block text-3xl sm:text-5xl md:text-6xl text-white tracking-wide">' + parts[0].trim() + '</span><span class="block text-2xl sm:text-4xl md:text-[42px] text-amber-400 tracking-wider mt-1 sm:mt-2">PHƯỜNG ' + parts[1].trim() + '</span>';
+        } else {
+          document.getElementById('heroTenGiai').textContent = APP_CONFIG.TEN_GIAI;
+        }
+      }
+      if (APP_CONFIG.CHU_DE && APP_CONFIG.CHU_DE !== DEFAULT_CONFIG.CHU_DE) {
+        document.getElementById('heroChuDe').textContent = APP_CONFIG.CHU_DE;
+      }
       document.getElementById('heroNgay').textContent = APP_CONFIG.GIO_XUAT_PHAT;
       document.getElementById('heroDiaDiem').textContent = APP_CONFIG.DIA_DIEM;
       document.getElementById('time3km').textContent = APP_CONFIG.GIO_XUAT_PHAT;
@@ -861,7 +881,7 @@
       ctx.fillStyle = '#fbbf24';
       ctx.font = 'bold 20px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('UBND PHƯỜNG TÂN KHAI · CHÀO MỪNG NGÀY VĂN HÓA VIỆT NAM (24/11)', 500, 72);
+      ctx.fillText('UBND PHƯỜNG TÂN KHAI · HƯỞNG ỨNG "TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT" NĂM 2026', 500, 72);
 
       ctx.fillStyle = '#ffffff';
       ctx.font = '900 38px sans-serif';
