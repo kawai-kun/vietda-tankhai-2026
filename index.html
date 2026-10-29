@@ -197,21 +197,19 @@
           <div class="absolute inset-0 bg-gradient-to-b from-[#0b132b]/80 via-[#0f172a]/75 to-[#7c2d12]/90"></div>
 
           <div class="relative z-10 max-w-xl mx-auto">
-            <!-- CHỦ ĐỀ: ĐIỂM NHẤN TRỌNG ĐIỂM HƯỞNG ỨNG TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT -->
-            <div id="heroChuDe" class="inline-flex flex-wrap items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-amber-950/80 via-rose-950/70 to-amber-950/80 backdrop-blur-md border border-amber-400/80 shadow-lg shadow-amber-500/20 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-100 mb-3.5">
+            <!-- CHỦ ĐỀ NGẮN GỌN & NỔI BẬT NHẤP NHÁY HƯỞNG ỨNG TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT -->
+            <div id="heroChuDe" class="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-gradient-to-r from-amber-500/25 via-rose-500/35 to-amber-500/25 backdrop-blur-md border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.7)] animate-pulse text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-amber-200 mb-3.5">
               <span class="text-amber-400 text-sm">★</span>
-              <span>HOẠT ĐỘNG TRỌNG ĐIỂM HƯỞNG ỨNG</span>
-              <span class="text-white font-extrabold px-2 py-0.5 rounded-lg bg-amber-500/30 border border-amber-300/60 text-amber-200">“TUẦN VĂN HÓA - ĐẠI ĐOÀN KẾT”</span>
-              <span>PHƯỜNG TÂN KHAI NĂM 2026</span>
+              <span>Hoạt động hưởng ứng <strong class="text-white underline decoration-amber-400 decoration-2">“Tuần Văn hóa - Đại đoàn kết”</strong></span>
               <span class="text-amber-400 text-sm">★</span>
             </div>
 
-            <!-- TIÊU ĐỀ 2 HÀNG CÂN ĐỐI: [GIẢI VIỆT DÃ] / [PHƯỜNG TÂN KHAI NĂM 2026] -->
-            <h1 id="heroTenGiai" class="font-display italic font-black uppercase tracking-wide leading-tight text-white drop-shadow-xl mb-4">
-              <span class="block text-3xl sm:text-5xl md:text-6xl text-white tracking-wide">
+            <!-- TIÊU ĐỀ 2 HÀNG CÂN ĐỐI VỪA PHẢI, GỌN GÀNG KHÔNG BỊ RỚT CHỮ 2026 -->
+            <h1 id="heroTenGiai" class="font-display italic font-black uppercase tracking-wide leading-tight text-white drop-shadow-lg mb-4">
+              <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-white tracking-wide">
                 GIẢI VIỆT DÃ
               </span>
-              <span class="block text-2xl sm:text-4xl md:text-[42px] text-amber-400 tracking-wider mt-1 sm:mt-2">
+              <span class="block text-lg sm:text-2xl md:text-[28px] lg:text-[32px] text-amber-400 tracking-wider whitespace-nowrap mt-1">
                 PHƯỜNG TÂN KHAI NĂM 2026
               </span>
             </h1>
@@ -250,16 +248,19 @@
 
         <!-- NỘI DUNG TABS & FORM -->
         <div class="p-5 sm:p-7">
-          <!-- THANH 3 TAB HIỆN ĐẠI -->
-          <div class="bg-slate-100 p-1.5 rounded-2xl grid grid-cols-1 sm:grid-cols-3 gap-1.5 mb-6 border border-slate-200/80">
-            <button type="button" id="tabBtn-CA_NHAN" onclick="switchTab('CA_NHAN')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md">
-              🏃 1. ĐĂNG KÝ CÁ NHÂN
+          <!-- THANH 4 TAB HIỆN ĐẠI -->
+          <div class="bg-slate-100 p-1.5 rounded-2xl grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-6 border border-slate-200/80">
+            <button type="button" id="tabBtn-CA_NHAN" onclick="switchTab('CA_NHAN')" class="seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md">
+              🏃 1. CÁ NHÂN
             </button>
-            <button type="button" id="tabBtn-TAP_THE" onclick="switchTab('TAP_THE')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
-              👥 2. TRƯỞNG ĐOÀN / KHU PHỐ
+            <button type="button" id="tabBtn-TAP_THE" onclick="switchTab('TAP_THE')" class="seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
+              👥 2. TRƯỞNG ĐOÀN
             </button>
-            <button type="button" id="tabBtn-TRA_CUU" onclick="switchTab('TRA_CUU')" class="seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
-              🔍 3. TRA CỨU SỐ BIB
+            <button type="button" id="tabBtn-TRA_CUU" onclick="switchTab('TRA_CUU')" class="seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
+              🔍 3. TRA CỨU BIB
+            </button>
+            <button type="button" id="tabBtn-TRONG_TAI" onclick="switchTab('TRONG_TAI')" class="seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900">
+              ⏱️ 4. TRỌNG TÀI & HẠNG
             </button>
           </div>
 
@@ -386,6 +387,16 @@
                 </table>
               </div>
 
+              <!-- BÁO TIẾN ĐỘ ĐIỀU KIỆN TOÀN ĐOÀN (TỐI THIỂU 10 VĐV) -->
+              <div id="teamQuotaBox" class="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs flex flex-wrap items-center justify-between gap-2">
+                <span id="teamQuotaText" class="font-bold text-amber-900">
+                  📊 Tiến độ điều kiện Toàn đoàn (Tối thiểu 10 VĐV): <strong class="text-orange-600">Đang có 0 VĐV</strong>
+                </span>
+                <span id="teamQuotaBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-200 text-amber-900">
+                  Cần tối thiểu 10 VĐV
+                </span>
+              </div>
+
               <div class="flex flex-wrap gap-2.5 mt-3">
                 <button type="button" onclick="addRows(1)" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold cursor-pointer transition-all">
                   + Thêm 01 dòng VĐV
@@ -448,6 +459,141 @@
                   <tr><td colspan="6" class="p-6 text-center text-slate-500">Bấm nút tìm kiếm để xem danh sách số BIB đã cấp...</td></tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          <!-- ================= TAB 4: BÀN TRỌNG TÀI & XẾP HẠNG ================= -->
+          <div id="tab-TRONG_TAI" class="tab-section space-y-5">
+            <!-- BANNER TRỌNG TÀI -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md border border-slate-700">
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-[11px] font-black uppercase tracking-wider mb-1.5">
+                  ⏱️ TỔ TRỌNG TÀI & ĐIỀU HÀNH THI ĐẤU
+                </div>
+                <h3 class="font-display italic text-base sm:text-lg font-bold text-white uppercase">
+                  Ghi nhận Check-point Quay Đầu & Về Đích (Finisher)
+                </h3>
+                <p class="text-xs text-slate-300">
+                  Nhập số BIB ghi nhận tức thì • Tự động xếp hạng cá nhân 1, 2, 3 & tính điểm Toàn đoàn (Tối thiểu &ge; 10 VĐV)
+                </p>
+              </div>
+              <div class="shrink-0">
+                <button type="button" onclick="refreshRefereeDashboard()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition-all cursor-pointer">
+                  🔄 Làm mới bảng điểm
+                </button>
+              </div>
+            </div>
+
+            <!-- Ô NHẬP NHANH SỐ BIB ĐỂ CHECK-IN -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border-2 border-slate-200 space-y-3.5">
+              <label class="block text-xs sm:text-sm font-bold text-slate-900">
+                1. Nhập Số BIB Vận động viên cần Check-in (Ví dụ: 5001, 3001...):
+              </label>
+              <div class="flex gap-2">
+                <input type="text" id="ref_bibInput" placeholder="VD: 5001, 3001..." onkeyup="if(event.key==='Enter') lookupRefereeBib()" class="flex-1 px-4 py-3 text-base sm:text-lg font-mono-num font-extrabold bg-white border border-slate-300 rounded-xl focus:border-indigo-600 outline-none uppercase">
+                <button type="button" onclick="lookupRefereeBib()" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm cursor-pointer transition-all">
+                  🔍 Tìm BIB
+                </button>
+              </div>
+
+              <!-- THẺ THÔNG TIN VĐV & 2 NÚT THAO TÁC 1 CHẠM -->
+              <div id="ref_athleteCard" style="display:none;" class="p-4 rounded-2xl bg-white border border-indigo-200 shadow-sm space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                  <div>
+                    <span id="ref_cardDistanceBadge" class="inline-block px-2.5 py-0.5 rounded text-[11px] font-extrabold uppercase text-white bg-orange-600">5KM NAM</span>
+                    <span class="ml-2 font-mono-num text-xs font-bold text-slate-500" id="ref_cardMaDK">VD26-001</span>
+                    <h4 id="ref_cardName" class="text-base sm:text-lg font-black text-slate-900 mt-0.5">NGUYỄN VĂN AN</h4>
+                    <p id="ref_cardUnit" class="text-xs font-semibold text-slate-600">Khu phố Tân Bình • Nam sinh: 1995</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xs text-slate-500 font-semibold block">SỐ BIB:</span>
+                    <span id="ref_cardBib" class="font-display font-black text-3xl sm:text-4xl text-indigo-700 font-mono-num">5001</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                  <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="text-slate-500 font-medium block">📍 Trạm Check-point (Quay đầu):</span>
+                    <strong id="ref_statusCheckpoint" class="text-slate-700 font-bold">Chưa qua</strong>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="text-slate-500 font-medium block">🏁 Về Đích (Finisher):</span>
+                    <strong id="ref_statusFinisher" class="text-slate-700 font-bold">Chưa xác nhận</strong>
+                  </div>
+                </div>
+
+                <!-- 2 NÚT THAO TÁC 1 CHẠM -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <button type="button" id="btnRefCheckpoint" onclick="confirmRefereeAction('CHECKPOINT')" class="py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs sm:text-sm shadow cursor-pointer transition-all flex items-center justify-center gap-2">
+                    <span>📍 XÁC NHẬN QUA CHECK-POINT</span>
+                  </button>
+                  <button type="button" id="btnRefFinisher" onclick="confirmRefereeAction('FINISHER')" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm shadow cursor-pointer transition-all flex items-center justify-center gap-2">
+                    <span>🏆 XÁC NHẬN VỀ ĐÍCH & XẾP HẠNG</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- BẢNG ĐIỂM TOÀN ĐOÀN (ĐIỀU KIỆN TỐI THIỂU 10 VĐV) -->
+            <div class="space-y-2.5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-xs sm:text-sm text-slate-900 uppercase flex items-center gap-2">
+                  <span>🏆 BẢNG ĐIỂM TOÀN ĐOÀN CÁC KHU PHỐ / ĐƠN VỊ</span>
+                  <span class="text-[11px] font-normal text-slate-500 normal-case">(Điều kiện: &ge; 10 VĐV)</span>
+                </h4>
+                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+                  ⚡ Tự động tính toán khi có đăng ký & về đích
+                </span>
+              </div>
+
+              <div class="overflow-x-auto border border-slate-200 rounded-2xl max-h-[350px] overflow-y-auto">
+                <table class="w-full border-collapse min-w-[620px] text-xs">
+                  <thead>
+                    <tr class="bg-slate-900 text-white uppercase text-center">
+                      <th class="py-2.5 px-2 w-14 sticky top-0 bg-slate-900">HẠNG</th>
+                      <th class="py-2.5 px-3 text-left sticky top-0 bg-slate-900">Khu phố / Đơn vị</th>
+                      <th class="py-2.5 px-2 w-20 sticky top-0 bg-slate-900">Tổng VĐV</th>
+                      <th class="py-2.5 px-3 w-40 sticky top-0 bg-slate-900">Tiêu chí Toàn đoàn (&ge; 10)</th>
+                      <th class="py-2.5 px-2 w-24 sticky top-0 bg-slate-900">Về Đích</th>
+                      <th class="py-2.5 px-2 w-24 sticky top-0 bg-slate-900">Tổng điểm</th>
+                    </tr>
+                  </thead>
+                  <tbody id="refereeTeamStandingsBody" class="divide-y divide-slate-200 text-center">
+                    <tr><td colspan="6" class="p-6 text-slate-500">Đang tải bảng điểm toàn đoàn...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- BẢNG THỨ HẠNG VỀ ĐÍCH CÁ NHÂN -->
+            <div class="space-y-2.5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-xs sm:text-sm text-slate-900 uppercase">
+                  🥇 BẢNG VÀNG THỨ TỰ VỀ ĐÍCH CÁ NHÂN (FINISHER)
+                </h4>
+                <div class="flex gap-1.5">
+                  <button type="button" id="subtab-5km" onclick="switchRefereeDist('5km')" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-600 text-white cursor-pointer">5KM Nam</button>
+                  <button type="button" id="subtab-3km" onclick="switchRefereeDist('3km')" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 cursor-pointer">3KM Nữ/PT</button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto border border-slate-200 rounded-2xl max-h-[350px] overflow-y-auto">
+                <table class="w-full border-collapse min-w-[560px] text-xs">
+                  <thead>
+                    <tr class="bg-slate-900 text-white uppercase text-center">
+                      <th class="py-2.5 px-2 w-14 sticky top-0 bg-slate-900">HẠNG</th>
+                      <th class="py-2.5 px-2 w-20 sticky top-0 bg-slate-900">SỐ BIB</th>
+                      <th class="py-2.5 px-3 text-left sticky top-0 bg-slate-900">Họ và tên VĐV</th>
+                      <th class="py-2.5 px-3 text-left sticky top-0 bg-slate-900">Đơn vị / Khu phố</th>
+                      <th class="py-2.5 px-2 w-24 sticky top-0 bg-slate-900">Check-point</th>
+                      <th class="py-2.5 px-2 w-28 sticky top-0 bg-slate-900">Giờ về đích</th>
+                    </tr>
+                  </thead>
+                  <tbody id="refereeFinishersBody" class="divide-y divide-slate-200">
+                    <tr><td colspan="6" class="p-6 text-center text-slate-500">Chưa có VĐV nào về đích. Khi trọng tài xác nhận, thứ tự sẽ tự động hiển thị tại đây.</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -593,7 +739,7 @@
 
     var DEFAULT_CONFIG = {
       TEN_GIAI: 'GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026',
-      CHU_DE: 'Hoạt động trọng điểm hưởng ứng “Tuần Văn hóa - Đại đoàn kết” phường Tân Khai năm 2026',
+      CHU_DE: 'Hoạt động hưởng ứng “Tuần Văn hóa - Đại đoàn kết”',
       HOTLINE_ZALO: '0984.724.131',
       NGAY_THI_DAU: '15/11/2026',
       GIO_XUAT_PHAT: '06h30 • 15/11/2026',
@@ -658,7 +804,7 @@
       if (APP_CONFIG.TEN_GIAI && APP_CONFIG.TEN_GIAI !== DEFAULT_CONFIG.TEN_GIAI) {
         var parts = APP_CONFIG.TEN_GIAI.split('PHƯỜNG');
         if (parts.length > 1) {
-          document.getElementById('heroTenGiai').innerHTML = '<span class="block text-3xl sm:text-5xl md:text-6xl text-white tracking-wide">' + parts[0].trim() + '</span><span class="block text-2xl sm:text-4xl md:text-[42px] text-amber-400 tracking-wider mt-1 sm:mt-2">PHƯỜNG ' + parts[1].trim() + '</span>';
+          document.getElementById('heroTenGiai').innerHTML = '<span class="block text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-white tracking-wide">' + parts[0].trim() + '</span><span class="block text-lg sm:text-2xl md:text-[28px] lg:text-[32px] text-amber-400 tracking-wider whitespace-nowrap mt-1">PHƯỜNG ' + parts[1].trim() + '</span>';
         } else {
           document.getElementById('heroTenGiai').textContent = APP_CONFIG.TEN_GIAI;
         }
@@ -807,19 +953,22 @@
     }
 
     function switchTab(mode) {
-      ['CA_NHAN', 'TAP_THE', 'TRA_CUU'].forEach(function(m) {
+      ['CA_NHAN', 'TAP_THE', 'TRA_CUU', 'TRONG_TAI'].forEach(function(m) {
         var btn = document.getElementById('tabBtn-' + m);
         var sec = document.getElementById('tab-' + m);
-        if (m === mode) {
-          btn.className = 'seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md';
-          sec.classList.add('active');
-        } else {
-          btn.className = 'seg-btn py-2.5 px-3 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900';
-          sec.classList.remove('active');
+        if (btn && sec) {
+          if (m === mode) {
+            btn.className = 'seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer bg-[#0f172a] text-white shadow-md';
+            sec.classList.add('active');
+          } else {
+            btn.className = 'seg-btn py-2 px-2.5 rounded-xl text-xs sm:text-[13px] font-extrabold transition-all cursor-pointer text-slate-600 hover:text-slate-900';
+            sec.classList.remove('active');
+          }
         }
       });
       document.getElementById('statusBox').style.display = 'none';
       if (mode === 'TRA_CUU') searchBib();
+      if (mode === 'TRONG_TAI') refreshRefereeDashboard();
     }
 
     function openFullMap(type) {
@@ -930,7 +1079,7 @@
         tr.className = 'bg-white even:bg-slate-50';
         tr.innerHTML =
           '<td class="row-index py-2 px-2 text-center font-bold text-slate-500"></td>' +
-          '<td class="py-1.5 px-2"><input type="text" class="v-name w-full px-2.5 py-1.5 border border-slate-200 rounded-lg" onblur="this.value=formatVietnameseName(this.value)" placeholder="Nhập họ và tên VĐV..."></td>' +
+          '<td class="py-1.5 px-2"><input type="text" class="v-name w-full px-2.5 py-1.5 border border-slate-200 rounded-lg" oninput="updateTeamQuotaCounter()" onblur="this.value=formatVietnameseName(this.value); updateTeamQuotaCounter();" placeholder="Nhập họ và tên VĐV..."></td>' +
           '<td class="py-1.5 px-2"><input type="number" class="v-year w-full px-2 py-1.5 border border-slate-200 rounded-lg text-center" placeholder="1992" min="1945" max="2018"></td>' +
           '<td class="py-1.5 px-2"><select class="v-gender w-full px-2 py-1.5 border border-slate-200 rounded-lg" onchange="syncRowDist(this)"><option value="Nam">Nam</option><option value="Nữ">Nữ</option></select></td>' +
           '<td class="py-1.5 px-2"><select class="v-dist w-full px-2 py-1.5 border border-slate-200 rounded-lg font-bold"><option value="5km">5km Nam</option><option value="3km">3km Nữ/PT</option></select></td>' +
@@ -957,6 +1106,7 @@
       document.querySelectorAll('#vdvBody tr').forEach(function(r, idx) {
         r.querySelector('.row-index').textContent = idx + 1;
       });
+      updateTeamQuotaCounter();
     }
 
     function showStatus(msg, isError) {
@@ -1088,6 +1238,21 @@
           unitStats: unitStats,
           results: filtered.slice().reverse()
         });
+      } else if (actionName === 'capNhatTrongTai') {
+        var idx = list.findIndex(function(x) { return String(x.bib) === String(payload.bib); });
+        if (idx !== -1) {
+          if (payload.type === 'CHECKPOINT') {
+            list[idx].checkpoint = 'Đã qua lúc ' + payload.time;
+          } else if (payload.type === 'FINISHER') {
+            list[idx].finisher = 'Hoàn thành lúc ' + payload.time;
+            list[idx].rank = payload.rank;
+            list[idx].finishTime = payload.time;
+          }
+          saveLocalAthletes(list);
+          if (onSuccess) onSuccess({ success: true, athlete: list[idx] });
+        } else {
+          if (onSuccess) onSuccess({ success: false, message: 'Không tìm thấy VĐV' });
+        }
       }
     }
 
@@ -1097,18 +1262,30 @@
         var runner = google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure);
         if (actionName === 'guiDangKyTuWebApp') runner.guiDangKyTuWebApp(payload);
         else if (actionName === 'traCuuBibWebApp') runner.traCuuBibWebApp(payload.keyword, payload.donVi);
+        else if (actionName === 'capNhatTrongTai') {
+          if (runner.capNhatTrongTai) runner.capNhatTrongTai(payload);
+          else runLocalFallback(actionName, payload, onSuccess);
+        }
         return;
       }
 
       if (GAS_WEB_APP_URL && GAS_WEB_APP_URL.trim() !== '') {
+        var bodyPayload = payload;
+        if (actionName === 'traCuuBibWebApp') {
+          bodyPayload = { action: 'traCuu', keyword: payload.keyword, donVi: payload.donVi };
+        } else if (actionName === 'capNhatTrongTai') {
+          bodyPayload = Object.assign({ action: 'capNhatTrongTai' }, payload);
+        }
         fetch(GAS_WEB_APP_URL.trim(), {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(actionName === 'traCuuBibWebApp' ? { action: 'traCuu', keyword: payload.keyword, donVi: payload.donVi } : payload)
+          body: JSON.stringify(bodyPayload)
         })
           .then(function(r) { return r.json(); })
           .then(onSuccess)
-          .catch(onFailure);
+          .catch(function(e) {
+            runLocalFallback(actionName, payload, onSuccess);
+          });
         return;
       }
 
@@ -1235,9 +1412,13 @@
       box.innerHTML = unitStats.map(function(item, idx) {
         var pct = Math.max(6, Math.round((item.total / maxVal) * 100));
         var medal = idx === 0 ? '🥇 ' : idx === 1 ? '🥈 ' : idx === 2 ? '🥉 ' : (idx + 1) + '. ';
+        var isQual = item.total >= 10;
+        var qualBadge = isQual
+          ? '<span class="ml-1.5 px-2 py-0.5 rounded-md text-[10px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">🏆 ĐỦ ĐOÀN (' + item.total + '/10)</span>'
+          : '<span class="ml-1.5 px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">Thiếu ' + (10 - item.total) + ' VĐV</span>';
         return '<div class="space-y-1 pt-1">' +
           '<div class="flex items-center justify-between text-xs">' +
-            '<span class="font-bold text-slate-800">' + medal + item.ward + '</span>' +
+            '<span class="font-bold text-slate-800">' + medal + item.ward + qualBadge + '</span>' +
             '<span class="font-mono-num text-slate-600 font-semibold"><strong class="text-slate-900">' + item.total + '</strong> VĐV (3km: ' + item.c3 + ' · 5km: ' + item.c5 + ')</span>' +
           '</div>' +
           '<div class="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">' +
@@ -1304,6 +1485,225 @@
           tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-rose-600">' + (err && err.message ? err.message : 'Không thể tải dữ liệu') + '</td></tr>';
         }
       );
+    }
+
+    // =========================================================================
+    // HỆ THỐNG TRỌNG TÀI, CHECK-POINT, FINISHER & TỰ ĐỘNG XẾP HẠNG TOÀN ĐOÀN
+    // =========================================================================
+    var CURRENT_REFEREE_ATHLETE = null;
+    var CURRENT_REFEREE_DIST = '5km';
+
+    function updateTeamQuotaCounter() {
+      var box = document.getElementById('teamQuotaBox');
+      var txt = document.getElementById('teamQuotaText');
+      var badge = document.getElementById('teamQuotaBadge');
+      if (!box || !txt) return;
+
+      var filledCount = 0;
+      document.querySelectorAll('#vdvBody tr').forEach(function(r) {
+        var n = (r.querySelector('.v-name') && r.querySelector('.v-name').value || '').trim();
+        if (n) filledCount++;
+      });
+
+      if (filledCount >= 10) {
+        box.className = 'mt-3 p-3 rounded-xl bg-emerald-50 border border-emerald-300 text-xs flex flex-wrap items-center justify-between gap-2';
+        txt.innerHTML = '📊 Tiến độ Toàn đoàn: <strong class="text-emerald-700 font-extrabold">Đã nhập ' + filledCount + ' VĐV</strong> &mdash; Đã đạt tiêu chuẩn xét giải toàn đoàn!';
+        badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-200 text-emerald-900';
+        badge.textContent = '🏆 ĐỦ ĐIỀU KIỆN (>=10)';
+      } else {
+        box.className = 'mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs flex flex-wrap items-center justify-between gap-2';
+        txt.innerHTML = '📊 Tiến độ Toàn đoàn: <strong class="text-orange-600 font-extrabold">Đang có ' + filledCount + '/10 VĐV</strong> &mdash; Cần thêm ít nhất ' + (10 - filledCount) + ' VĐV để đủ điều kiện xét giải toàn đoàn.';
+        badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-200 text-amber-900';
+        badge.textContent = 'Thiếu ' + (10 - filledCount) + ' VĐV';
+      }
+    }
+
+    function lookupRefereeBib() {
+      var bibRaw = (document.getElementById('ref_bibInput').value || '').trim();
+      if (!bibRaw) {
+        alert('Vui lòng nhập Số BIB (VD: 5001, 3001...) để kiểm tra!');
+        return;
+      }
+
+      var list = getLocalAthletes();
+      var found = list.find(function(x) {
+        return String(x.bib).trim() === bibRaw;
+      });
+
+      var card = document.getElementById('ref_athleteCard');
+      if (!found) {
+        card.style.display = 'none';
+        CURRENT_REFEREE_ATHLETE = null;
+        alert('Không tìm thấy VĐV có số BIB #' + bibRaw + ' trong hệ thống!');
+        return;
+      }
+
+      CURRENT_REFEREE_ATHLETE = found;
+      var is3km = found.cuLy === '3km';
+      document.getElementById('ref_cardDistanceBadge').textContent = is3km ? '3KM NỮ / PHONG TRÀO' : '5KM DÀNH CHO NAM';
+      document.getElementById('ref_cardDistanceBadge').className = 'inline-block px-2.5 py-0.5 rounded text-[11px] font-extrabold uppercase text-white ' + (is3km ? 'bg-sky-600' : 'bg-orange-600');
+      document.getElementById('ref_cardMaDK').textContent = found.maDK || '';
+      document.getElementById('ref_cardName').textContent = found.hoTen;
+      document.getElementById('ref_cardUnit').textContent = found.donVi + (found.namSinh ? ' • Nam sinh: ' + found.namSinh : '') + (found.sdt ? ' • SĐT: ' + found.sdt : '');
+      document.getElementById('ref_cardBib').textContent = found.bib;
+
+      var cpEl = document.getElementById('ref_statusCheckpoint');
+      var fnEl = document.getElementById('ref_statusFinisher');
+      var btnCp = document.getElementById('btnRefCheckpoint');
+      var btnFn = document.getElementById('btnRefFinisher');
+
+      if (found.checkpoint && found.checkpoint.indexOf('Đã qua') !== -1) {
+        cpEl.innerHTML = '<span class="text-emerald-700 font-bold">✔ ' + found.checkpoint + '</span>';
+        btnCp.className = 'py-3 px-4 rounded-xl bg-slate-200 text-slate-500 font-extrabold text-xs sm:text-sm cursor-not-allowed flex items-center justify-center gap-2';
+        btnCp.disabled = true;
+      } else {
+        cpEl.innerHTML = '<span class="text-amber-600 font-semibold">Chưa qua trạm quay đầu</span>';
+        btnCp.className = 'py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs sm:text-sm shadow cursor-pointer transition-all flex items-center justify-center gap-2';
+        btnCp.disabled = false;
+      }
+
+      if (found.finisher && found.finisher.indexOf('Hoàn thành') !== -1) {
+        fnEl.innerHTML = '<span class="text-emerald-700 font-bold">🏆 ' + found.finisher + (found.rank ? ' (Hạng ' + found.rank + ')' : '') + '</span>';
+        btnFn.className = 'py-3 px-4 rounded-xl bg-slate-200 text-slate-500 font-extrabold text-xs sm:text-sm cursor-not-allowed flex items-center justify-center gap-2';
+        btnFn.disabled = true;
+      } else {
+        fnEl.innerHTML = '<span class="text-slate-500 font-semibold">Chưa về đích</span>';
+        btnFn.className = 'py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm shadow cursor-pointer transition-all flex items-center justify-center gap-2';
+        btnFn.disabled = false;
+      }
+
+      card.style.display = 'block';
+    }
+
+    function confirmRefereeAction(actionType) {
+      if (!CURRENT_REFEREE_ATHLETE) return;
+      var ath = CURRENT_REFEREE_ATHLETE;
+      var now = new Date();
+      var timeStr = (now.getHours() < 10 ? '0' : '') + now.getHours() + ':' +
+                    (now.getMinutes() < 10 ? '0' : '') + now.getMinutes() + ':' +
+                    (now.getSeconds() < 10 ? '0' : '') + now.getSeconds();
+
+      var list = getLocalAthletes();
+      var idx = list.findIndex(function(x) { return String(x.bib) === String(ath.bib); });
+      if (idx === -1) return;
+
+      if (actionType === 'CHECKPOINT') {
+        list[idx].checkpoint = 'Đã qua lúc ' + timeStr;
+        saveLocalAthletes(list);
+        CURRENT_REFEREE_ATHLETE = list[idx];
+        callBackend('capNhatTrongTai', { bib: ath.bib, type: 'CHECKPOINT', time: timeStr }, function(){}, function(){});
+        lookupRefereeBib();
+        showStatus('📍 Đã xác nhận VĐV #' + ath.bib + ' (' + ath.hoTen + ') qua Check-point lúc ' + timeStr + '!', false);
+      } else if (actionType === 'FINISHER') {
+        var existingFinCount = 0;
+        list.forEach(function(x) {
+          if (x.cuLy === ath.cuLy && x.finisher && x.finisher.indexOf('Hoàn thành') !== -1) {
+            existingFinCount++;
+          }
+        });
+        var assignedRank = existingFinCount + 1;
+        list[idx].finisher = 'Hoàn thành lúc ' + timeStr;
+        list[idx].rank = assignedRank;
+        list[idx].finishTime = timeStr;
+        saveLocalAthletes(list);
+        CURRENT_REFEREE_ATHLETE = list[idx];
+        callBackend('capNhatTrongTai', { bib: ath.bib, type: 'FINISHER', time: timeStr, rank: assignedRank }, function(){}, function(){});
+        lookupRefereeBib();
+        refreshRefereeDashboard();
+        showStatus('🎉 Chúc mừng VĐV #' + ath.bib + ' (' + ath.hoTen + ') đã về đích!\n🏆 Xếp hạng: Top ' + assignedRank + ' (' + (ath.cuLy === '5km' ? '5KM Nam' : '3KM Nữ/PT') + ') lúc ' + timeStr, false);
+      }
+    }
+
+    function switchRefereeDist(dist) {
+      CURRENT_REFEREE_DIST = dist;
+      var btn5 = document.getElementById('subtab-5km');
+      var btn3 = document.getElementById('subtab-3km');
+      if (dist === '5km') {
+        btn5.className = 'px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-600 text-white cursor-pointer';
+        btn3.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 cursor-pointer';
+      } else {
+        btn3.className = 'px-3 py-1 rounded-lg text-xs font-extrabold bg-sky-600 text-white cursor-pointer';
+        btn5.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 cursor-pointer';
+      }
+      refreshRefereeDashboard();
+    }
+
+    function refreshRefereeDashboard() {
+      var list = getLocalAthletes();
+
+      // 1. Tính toán bảng điểm toàn đoàn (Điều kiện tối thiểu 10 VĐV)
+      var unitMap = {};
+      (APP_CONFIG.DANH_SACH_DON_VI || []).forEach(function(u) {
+        unitMap[u] = { name: u, total: 0, c3: 0, c5: 0, finishers: 0, score: 0 };
+      });
+
+      list.forEach(function(x) {
+        if (!unitMap[x.donVi]) unitMap[x.donVi] = { name: x.donVi, total: 0, c3: 0, c5: 0, finishers: 0, score: 0 };
+        unitMap[x.donVi].total++;
+        if (x.cuLy === '5km') unitMap[x.donVi].c5++; else unitMap[x.donVi].c3++;
+        if (x.finisher && x.finisher.indexOf('Hoàn thành') !== -1) {
+          unitMap[x.donVi].finishers++;
+          unitMap[x.donVi].score += 1; // 1 điểm mỗi finisher
+          if (x.rank === 1) unitMap[x.donVi].score += 5; // Top 1 + 5đ
+          else if (x.rank === 2) unitMap[x.donVi].score += 3; // Top 2 + 3đ
+          else if (x.rank === 3) unitMap[x.donVi].score += 2; // Top 3 + 2đ
+        }
+      });
+
+      var teamList = Object.keys(unitMap).map(function(k) { return unitMap[k]; });
+      teamList.sort(function(a, b) {
+        var aQual = a.total >= 10 ? 1 : 0;
+        var bQual = b.total >= 10 ? 1 : 0;
+        if (aQual !== bQual) return bQual - aQual;
+        if (b.score !== a.score) return b.score - a.score;
+        return b.total - a.total;
+      });
+
+      var tbodyTeam = document.getElementById('refereeTeamStandingsBody');
+      if (tbodyTeam) {
+        var qualRank = 1;
+        tbodyTeam.innerHTML = teamList.map(function(t) {
+          var isQual = t.total >= 10;
+          var rankDisplay = isQual ? ('🏆 Hạng ' + (qualRank++)) : '<span class="text-slate-400">Không xét</span>';
+          var condBadge = isQual
+            ? '<span class="px-2 py-0.5 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">ĐỦ ĐIỀU KIỆN</span>'
+            : '<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">Chưa đủ (' + t.total + '/10)</span>';
+          return '<tr class="bg-white even:bg-slate-50 hover:bg-slate-100/60">' +
+            '<td class="py-2.5 px-2 font-black ' + (isQual ? 'text-orange-600' : 'text-slate-400') + '">' + rankDisplay + '</td>' +
+            '<td class="py-2.5 px-3 text-left font-bold text-slate-800">' + t.name + '</td>' +
+            '<td class="py-2.5 px-2 font-mono-num font-bold text-slate-700">' + t.total + '</td>' +
+            '<td class="py-2.5 px-3">' + condBadge + '</td>' +
+            '<td class="py-2.5 px-2 font-mono-num font-bold text-emerald-700">' + t.finishers + '</td>' +
+            '<td class="py-2.5 px-2 font-mono-num font-black text-slate-900 text-sm">' + t.score + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      // 2. Bảng thứ tự về đích cá nhân (Finisher Leaderboard)
+      var finishers = list.filter(function(x) {
+        return x.cuLy === CURRENT_REFEREE_DIST && x.finisher && x.finisher.indexOf('Hoàn thành') !== -1;
+      }).sort(function(a, b) {
+        return (a.rank || 999) - (b.rank || 999);
+      });
+
+      var tbodyFin = document.getElementById('refereeFinishersBody');
+      if (tbodyFin) {
+        if (finishers.length === 0) {
+          tbodyFin.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">Chưa có VĐV nào về đích cự ly này.</td></tr>';
+        } else {
+          tbodyFin.innerHTML = finishers.map(function(f) {
+            var medal = f.rank === 1 ? '🥇 Top 1' : f.rank === 2 ? '🥈 Top 2' : f.rank === 3 ? '🥉 Top 3' : ('Hạng ' + f.rank);
+            return '<tr class="bg-white even:bg-slate-50 text-center">' +
+              '<td class="py-2.5 px-2 font-black text-orange-600">' + medal + '</td>' +
+              '<td class="py-2.5 px-2 font-mono-num font-bold text-slate-900"><span class="px-2 py-0.5 rounded bg-slate-900 text-white">' + f.bib + '</span></td>' +
+              '<td class="py-2.5 px-3 text-left font-bold text-slate-900">' + f.hoTen + '</td>' +
+              '<td class="py-2.5 px-3 text-left text-slate-700">' + f.donVi + '</td>' +
+              '<td class="py-2.5 px-2 text-xs text-sky-700 font-medium">' + (f.checkpoint || 'Chưa qua') + '</td>' +
+              '<td class="py-2.5 px-2 text-xs text-emerald-700 font-bold font-mono-num">' + (f.finishTime || f.finisher) + '</td>' +
+            '</tr>';
+          }).join('');
+        }
+      }
     }
   </script>
 </body>
