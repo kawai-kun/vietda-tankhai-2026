@@ -148,9 +148,11 @@
 
       <!-- CỘT TRÁI (3/12): LỘ TRÌNH CỰ LY 3KM -->
       <aside id="panel3km" onclick="selectDistanceCard('3km')" class="lg:col-span-3 lg:sticky lg:top-16 order-2 lg:order-1 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border border-slate-200/90 shadow-md">
-        <div class="bg-gradient-to-br from-[#0284c7] via-[#0369a1] to-[#0f172a] p-4 sm:p-5 text-white">
-          <div class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-sky-100 mb-1.5">
-            🏃 SƠ ĐỒ BÊN TRÁI • NỮ & PHONG TRÀO
+        <div class="bg-gradient-to-br from-[#0284c7] via-[#0369a1] to-[#0f172a] p-4 sm:p-5 text-white text-center">
+          <div class="flex justify-center mb-2">
+            <div class="inline-flex items-center justify-center px-3.5 py-1 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-sky-100 text-center shadow-sm">
+              🏃 SƠ ĐỒ DÀNH CHO NỮ / PHONG TRÀO
+            </div>
           </div>
           <h2 class="font-display italic text-2xl sm:text-[26px] font-extrabold uppercase tracking-wide leading-tight">
             LỘ TRÌNH CỰ LY 3KM
@@ -173,7 +175,7 @@
         <div class="p-3.5 space-y-2.5 bg-white">
           <div class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs">
             <span class="font-bold text-slate-600 uppercase">⏰ GIỜ XUẤT PHÁT</span>
-            <strong id="time3km" class="text-slate-900 font-extrabold text-sm">06h30 • 08/11/2026</strong>
+            <strong id="time3km" class="text-slate-900 font-extrabold text-sm">06h30 • 15/11/2026</strong>
           </div>
           <div class="p-3.5 rounded-2xl bg-slate-50 border-l-4 border-sky-600 text-xs text-slate-700 leading-relaxed">
             🏁 <strong class="text-slate-900">Lộ trình:</strong> Xuất phát tại UBND phường Tân Khai &rarr; Chạy đến trạm Check-point nhận vòng tay kiểm soát &rarr; Quay đầu về Đích nhận Huy hiệu <strong>FINISHER</strong>.
@@ -204,13 +206,14 @@
             </h1>
 
             <div class="space-y-1 text-xs sm:text-sm font-medium text-slate-100 mb-4">
-              <div>📅 Xuất phát: <strong id="heroNgay" class="text-amber-400 font-bold">06h30 • 08/11/2026</strong></div>
+              <div>📅 Xuất phát: <strong id="heroNgay" class="text-amber-400 font-bold">06h30 • 15/11/2026</strong></div>
               <div>📍 Địa điểm: <strong id="heroDiaDiem" class="text-amber-400 font-bold">Trung tâm Hành chính UBND phường Tân Khai</strong></div>
             </div>
 
             <!-- Đồng hồ đếm ngược -->
-            <div class="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full bg-slate-950/80 border border-white/20 backdrop-blur-md text-xs sm:text-sm mb-5">
-              <span class="text-slate-200 font-medium">⏳ Đếm ngược đến giờ G:</span>
+            <!-- Đồng hồ đếm ngược ngừng nhận đăng ký -->
+            <div id="countdownBox" class="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full bg-slate-950/80 border border-white/20 backdrop-blur-md text-xs sm:text-sm mb-5 transition-all">
+              <span id="cdLabel" class="text-slate-200 font-medium">⏳ Ngừng nhận đăng ký sau:</span>
               <strong id="cdTimer" class="text-amber-400 font-mono-num font-extrabold tracking-wide">-- ngày : -- giờ : -- phút : -- giây</strong>
             </div>
 
@@ -254,7 +257,7 @@
             <div>
               <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                 <label class="block text-xs sm:text-sm font-bold text-slate-900">
-                  Bước 1: Chọn cự ly đăng ký thi đấu (Tương ứng với sơ đồ bên trái & bên phải) <span class="text-rose-500">*</span>
+                  Bước 1: Chọn cự ly đăng ký thi đấu (Tương ứng với sơ đồ Nữ/Phong trào & Nam) <span class="text-rose-500">*</span>
                 </label>
                 <button type="button" onclick="openFullMap(document.getElementById('cn_cuLy').value === '3km' ? '3KM' : '5KM')" class="lg:hidden text-xs font-bold text-sky-600 underline cursor-pointer">
                   🗺️ Xem sơ đồ đường chạy
@@ -269,7 +272,7 @@
                   </div>
                   <div class="flex-1 min-w-0 pr-5">
                     <h3 class="font-bold text-slate-900 text-sm">Cự ly 3km (Nữ / Phong trào)</h3>
-                    <p class="text-[11px] text-slate-500 mt-1">&larr; Xem sơ đồ bên trái • Cut-off: 45 phút • Cấp BIB 3001+</p>
+                    <p class="text-[11px] text-slate-500 mt-1">&larr; Sơ đồ Nữ & Phong trào • Cut-off: 45 phút • Cấp BIB 3001+</p>
                   </div>
                   <div id="check3km" class="w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-slate-300 bg-white text-transparent">✓</div>
                 </div>
@@ -281,7 +284,7 @@
                   </div>
                   <div class="flex-1 min-w-0 pr-5">
                     <h3 class="font-bold text-slate-900 text-sm">Cự ly 5km (Nam)</h3>
-                    <p class="text-[11px] text-slate-500 mt-1">Xem sơ đồ bên phải &rarr; • Cut-off: 60 phút • Cấp BIB 5001+</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Sơ đồ dành cho Nam &rarr; • Cut-off: 60 phút • Cấp BIB 5001+</p>
                   </div>
                   <div id="check5km" class="w-5 h-5 rounded-full border-2 flex items-center justify-center absolute top-3.5 right-3.5 text-xs font-bold border-orange-500 bg-orange-500 text-white">✓</div>
                 </div>
@@ -452,10 +455,10 @@
               </div>
             </div>
 
-            <!-- ACCORDION 2: CẨM NANG & LỊCH TRÌNH SÁNG 08/11/2026 -->
+            <!-- ACCORDION 2: CẨM NANG & LỊCH TRÌNH SÁNG 15/11/2026 -->
             <div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 overflow-hidden">
               <button type="button" onclick="toggleBox('guideBox')" class="w-full px-4 py-3 flex items-center justify-between text-left text-xs sm:text-[13px] font-bold text-slate-800 hover:bg-slate-100 cursor-pointer">
-                <span>ℹ️ Cẩm nang & Lịch trình tập trung sáng ngày chạy (08/11/2026)</span>
+                <span>ℹ️ Cẩm nang & Lịch trình tập trung sáng ngày chạy (15/11/2026)</span>
                 <span class="text-slate-500">▼</span>
               </button>
               <div id="guideBox" style="display:none;" class="px-4 pb-4 pt-2.5 space-y-2 border-t border-slate-200/60 bg-white text-xs text-slate-600 leading-relaxed">
@@ -481,9 +484,11 @@
 
       <!-- CỘT PHẢI (3/12): LỘ TRÌNH CỰ LY 5KM -->
       <aside id="panel5km" onclick="selectDistanceCard('5km')" class="lg:col-span-3 lg:sticky lg:top-16 order-3 bg-white rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer border-2 border-orange-500 shadow-xl ring-4 ring-orange-500/15">
-        <div class="bg-gradient-to-br from-[#ff5500] via-[#c2410c] to-[#7c2d12] p-4 sm:p-5 text-white">
-          <div class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-100 mb-1.5">
-            🔥 SƠ ĐỒ BÊN PHẢI • DÀNH CHO NAM
+        <div class="bg-gradient-to-br from-[#ff5500] via-[#c2410c] to-[#7c2d12] p-4 sm:p-5 text-white text-center">
+          <div class="flex justify-center mb-2">
+            <div class="inline-flex items-center justify-center px-3.5 py-1 rounded-full bg-white/20 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-100 text-center shadow-sm">
+              🏃 SƠ ĐỒ DÀNH CHO NAM
+            </div>
           </div>
           <h2 class="font-display italic text-2xl sm:text-[26px] font-extrabold uppercase tracking-wide leading-tight">
             LỘ TRÌNH CỰ LY 5KM
@@ -506,7 +511,7 @@
         <div class="p-3.5 space-y-2.5 bg-white">
           <div class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs">
             <span class="font-bold text-slate-600 uppercase">⏰ GIỜ XUẤT PHÁT</span>
-            <strong id="time5km" class="text-slate-900 font-extrabold text-sm">06h30 • 08/11/2026</strong>
+            <strong id="time5km" class="text-slate-900 font-extrabold text-sm">06h30 • 15/11/2026</strong>
           </div>
           <div class="p-3.5 rounded-2xl bg-slate-50 border-l-4 border-orange-500 text-xs text-slate-700 leading-relaxed">
             🏁 <strong class="text-slate-900">Lộ trình:</strong> Xuất phát tại UBND phường Tân Khai &rarr; Chạy đến trạm Check-point nhận vòng tay kiểm soát &rarr; Quay đầu về Đích nhận Huy hiệu <strong>FINISHER</strong>.
@@ -579,9 +584,9 @@
       TEN_GIAI: 'GIẢI VIỆT DÃ PHƯỜNG TÂN KHAI NĂM 2026',
       CHU_DE: 'Thiết thực chào mừng Ngày Văn hóa Việt Nam (24/11)',
       HOTLINE_ZALO: '0984.724.131',
-      NGAY_THI_DAU: '08/11/2026',
-      GIO_XUAT_PHAT: '06h30 • 08/11/2026',
-      ISO_COUNTDOWN: '2026-11-08T06:30:00+07:00',
+      NGAY_THI_DAU: '15/11/2026',
+      GIO_XUAT_PHAT: '06h30 • 15/11/2026',
+      ISO_COUNTDOWN: '2026-11-15T06:30:00+07:00',
       DIA_DIEM: 'Trung tâm Hành chính UBND phường Tân Khai',
       MAP_3KM_URL: 'https://www.google.com/maps/d/embed?mid=1ZmqE3m1NRzXZWk0hA6ulMwWKV9ndkPc&ehbc=2E312F&noprof=1',
       MAP_5KM_URL: 'https://www.google.com/maps/d/embed?mid=1-JpFE_KVs2CNdWv-TeIIP2amNgZJaxM&ehbc=2E312F&noprof=1',
@@ -689,16 +694,27 @@
       el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
     }
 
+    function isRegistrationExpired() {
+      var target = new Date(APP_CONFIG.ISO_COUNTDOWN || '2026-11-15T06:30:00+07:00').getTime();
+      return (new Date().getTime() >= target);
+    }
+
     function startCountdown() {
-      var target = new Date(APP_CONFIG.ISO_COUNTDOWN || '2026-11-08T06:30:00+07:00').getTime();
+      var target = new Date(APP_CONFIG.ISO_COUNTDOWN || '2026-11-15T06:30:00+07:00').getTime();
       function updateTimer() {
         var now = new Date().getTime();
         var diff = target - now;
         var el = document.getElementById('cdTimer');
+        var lbl = document.getElementById('cdLabel');
+        var box = document.getElementById('countdownBox');
         if (diff <= 0) {
-          el.textContent = 'ĐÃ ĐẾN GIỜ XUẤT PHÁT!';
+          if (lbl) lbl.textContent = '⛔ Thời gian đăng ký:';
+          el.textContent = 'ĐÃ HẾT HẠN (Hệ thống vẫn nhận & ghi chú Quá hạn)';
+          el.className = 'text-rose-400 font-mono-num font-extrabold tracking-wide text-xs sm:text-sm';
+          if (box) box.className = 'inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full bg-rose-950/80 border border-rose-500/50 backdrop-blur-md text-xs sm:text-sm mb-5';
           return;
         }
+        if (lbl) lbl.textContent = '⏳ Ngừng nhận đăng ký sau:';
         var d = Math.floor(diff / (1000 * 60 * 60 * 24));
         var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -814,7 +830,7 @@
       bibEl.textContent = data.bib;
       bibEl.className = 'font-display text-6xl sm:text-7xl font-black tracking-tight leading-none font-mono-num ' + (is3km ? 'text-sky-700' : 'text-orange-600');
       document.getElementById('ticketName').textContent = data.hoTen;
-      document.getElementById('ticketMeta').textContent = data.donVi + (data.maDK ? ' • Mã ĐK: ' + data.maDK : '') + (data.namSinh ? ' • NS: ' + data.namSinh : '');
+      document.getElementById('ticketMeta').textContent = data.donVi + (data.maDK ? ' • Mã ĐK: ' + data.maDK : '') + (data.namSinh ? ' • NS: ' + data.namSinh : '') + (data.ghiChu ? ' • [' + data.ghiChu + ']' : '');
       document.getElementById('bibModal').style.display = 'flex';
     }
 
@@ -875,7 +891,7 @@
       ctx.fillStyle = '#cbd5e1';
       ctx.font = '600 20px sans-serif';
       ctx.textAlign = 'left';
-      ctx.fillText('⏰ Xuất phát: 06h30 · Ngày 08/11/2026 tại UBND phường Tân Khai', 75, 585);
+      ctx.fillText('⏰ Xuất phát: 06h30 · Ngày 15/11/2026 tại UBND phường Tân Khai', 75, 585);
 
       ctx.fillStyle = '#34d399';
       ctx.textAlign = 'right';
@@ -972,7 +988,8 @@
             namSinh: payload.namSinh,
             gioiTinh: payload.gioiTinh,
             donVi: payload.donVi,
-            cuLy: payload.cuLy
+            cuLy: payload.cuLy,
+            ghiChu: payload.ghiChu || (isRegistrationExpired() ? 'Quá thời hạn' : '')
           };
           list.push(item);
           saveLocalAthletes(list);
@@ -1008,7 +1025,8 @@
               namSinh: v.namSinh,
               gioiTinh: v.gioiTinh,
               donVi: payload.donVi,
-              cuLy: v.cuLy
+              cuLy: v.cuLy,
+              ghiChu: payload.ghiChu || (isRegistrationExpired() ? 'Quá thời hạn' : '')
             };
             list.push(rec);
             issued.push(rec);
@@ -1097,13 +1115,18 @@
 
       callBackend(
         'guiDangKyTuWebApp',
-        { mode: 'CA_NHAN', hoTen: hoTen, sdt: sdt, namSinh: namSinh, gioiTinh: gioiTinh, donVi: donVi, cuLy: cuLy },
+        { mode: 'CA_NHAN', hoTen: hoTen, sdt: sdt, namSinh: namSinh, gioiTinh: gioiTinh, donVi: donVi, cuLy: cuLy, ghiChu: (isRegistrationExpired() ? 'Quá thời hạn' : ''), quaHan: isRegistrationExpired() },
         function(res) {
           btn.disabled = false; btn.textContent = '⚡ GỬI ĐĂNG KÝ & NHẬN THẺ BIB NGAY';
           if (res && res.success) {
+            var expired = isRegistrationExpired();
+            if (expired && !res.ghiChu) res.ghiChu = 'Quá thời hạn';
             showBibModal(res);
             if (res.isDuplicate) {
               showStatus('ℹ️ ' + res.message, false);
+            } else if (expired) {
+              showStatus('⚠️ Lưu ý: Bạn gửi đăng ký sau thời hạn quy định. Hệ thống đã lưu hồ sơ và ghi chú "Quá thời hạn" để Ban Tổ chức xem xét!', false);
+              document.getElementById('cn_hoTen').value = '';
             } else {
               document.getElementById('statusBox').style.display = 'none';
               document.getElementById('cn_hoTen').value = '';
@@ -1146,7 +1169,7 @@
       var btn = document.getElementById('btnTt');
       btn.disabled = true; btn.textContent = '⏳ ĐANG LƯU DANH SÁCH ĐOÀN & CẤP BIB...';
 
-      var payload = { mode: 'TAP_THE', truongDoan: truongDoan, sdt: sdt, donVi: donVi, danhSachVdv: dsVdv };
+      var expired = isRegistrationExpired(); var payload = { mode: 'TAP_THE', truongDoan: truongDoan, sdt: sdt, donVi: donVi, danhSachVdv: dsVdv, ghiChu: (expired ? 'Quá thời hạn' : ''), quaHan: expired };
 
       if (fileInput.files.length > 0) {
         var file = fileInput.files[0];
@@ -1171,7 +1194,8 @@
           btn.disabled = false; btn.textContent = '🚀 GỬI DANH SÁCH ĐOÀN & CẤP SỐ BIB';
           if (res && res.success) {
             var detail = (res.issuedList || []).map(function(x) { return '• ' + x.hoTen + ' (' + x.cuLy + ') -> Số BIB: ' + x.bib; }).join('\n');
-            showStatus('🎉 ' + res.message + (detail ? '\n\nDANH SÁCH SỐ BIB ĐÃ CẤP:\n' + detail : ''), false);
+            var warn = payload.quaHan ? '\n⚠️ (Lưu ý: Danh sách gửi sau thời hạn quy định, hệ thống đã lưu và tự động ghi chú "Quá thời hạn" để Ban Tổ chức xem xét)' : '';
+            showStatus('🎉 ' + res.message + warn + (detail ? '\n\nDANH SÁCH SỐ BIB ĐÃ CẤP:\n' + detail : ''), false);
             loadLiveStats();
           } else {
             showStatus((res && res.message) || 'Có lỗi xảy ra', true);
